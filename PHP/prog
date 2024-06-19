@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<div class='pop-wrap'>
+
+    <div class='kiri'>
+
+        <div class='item html'>
+            <div class='item-wrap'>
+                <img alt='HyperText Markup Language (HTML)' class='lazyPORT'
+                    data-src='https://img.icons8.com/fluency/240/html-5.png' />
+                <p>HyperText Markup Language (HTML)</p>
+            </div>
+            <div class='subitem'>
+                <div class='subitem-wrap'>
+                    <img alt='Pug' class='lazyPORT'
+                        data-src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiyyVdrNWsoN0fjNaCYDYZl9ovJcP9YRxCwihNvs6jnRHKXOaVB91oSYwvr20M6lC9dErRojbEjNd9rbMLfVr5FulGF5-dMXREp_fz69x5SwSz5Fivsc8El71Qen_Cucx-02nURfyytdyKdJ7OZHEnrH5yPp0WIhliFY-ae7bSLialwjrfKFkQFOSyX9ak/s1600/pug.png' />
+                    <p>Pug</p>
+                </div>
+                <div class='subitem-wrap'>
+                    <img alt='Blogger XM' class='lazyPORT' data-src='https://img.icons8.com/fluency/240/rss.png' />
+                    <p>Blogger XML</p>
+                </div>
+            </div>
+        </div>
+
+        <div class='item css'>
+            <div class='item-wrap'>
+                <img alt='Cascading Style Sheet (CSS)' class='lazyPORT'
+                    data-src='https://img.icons8.com/fluency/240/css3.png' />
+                <p>Cascading Style Sheet (CSS)</p>
+            </div>
+            <div class='subitem'>
+                <div class='subitem-wrap'>
+                    <img alt='Bootstrap' class='lazyPORT' data-src='https://img.icons8.com/fluency/240/bootstrap.png' />
+                    <p>Bootstrap</p>
+                </div>
+                <div class='subitem-wrap'>
+                    <img alt='Tailwind' class='lazyPORT'
+                        data-src='https://img.icons8.com/fluency/240/tailwind_css.png' />
+                    <p>Tailwind</p>
+                </div>
+                <div class='subitem-wrap'>
+                    <img alt='Less' class='lazyPORT'
+                        data-src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgiHor-g3yDqMk3ewimoDKbFS85-gPLKqCND_2ORctspmDYmZ1R1iXRJEYGv16Yb4N36-lUTj1ztai3UdgbpLvJezok-oc29Bea8GuU9Ab1cxKXt0mp8l03ge9lpzKlUUxGJBVmrvSLX3KL-t0rawzEXF29bviYv2Jq0u8eJBmXZMuZpHvnV338DDf6lLE/s1600/less.png' />
+                    <p>Less</p>
+                </div>
+                <div class='subitem-wrap'>
+                    <img alt='Sass' class='lazyPORT'
+                        data-src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgugSQ68KCg6VouRo18RmGTxQXJAI_qQ8fqpV1QKSytuv9cvlIkg1uh0TSq9XFl4pQ7jOclqWrDqKDSHZm3XWhLbWRATeCYHG30cXhyQilKzy7IveOY8eqV_Bw_5eHljQQkAh6svIKdEO7OkMEOKodlwH9HzTshL4wR7buIyP37tSzQrVAWcYbPCqwTW5g/s1600/sass.png' />
+                    <p>Sass</p>
+                </div>
+                <div class='subitem-wrap'>
+                    <img alt='Stylus' class='lazyPORT'
+                        data-src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhvrz9f2GhLZTTqPX0vPNvWaLx3N6WG_mlVUKXOFKxQyfKJV4Slsb0psPILWS-KtABZn1DNREJ3dDL1Fun4meviboE4THLPrJnWf8LYYV0PKuo3BIApzGm-ENz_h0zDhj5ZJmL3d5H235ty6mbQCf8J1lsA7hxxfvzHPXXETZBA1cxuuQucJzwfruaW_E4/s100/stylus.png' />
+                    <p>Stylus</p>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class='tengah'>
+
+        <div class='item js'>
+            <div class='item-wrap'>
+                <img alt='JavaScript (JS)' class='lazyPORT'
+                    data-src='https://img.icons8.com/fluency/240/javascript.png' />
+                <p>JavaScript (JS)</p>
+            </div>
+            <div class='subitem'>
+                <div class='subitem-wrap'>
+                    <img alt='jQuery' class='lazyPORT'
+                        data-src='https://img.icons8.com/ios-filled/250/228BE6/jquery.png' />
+                    <p>jQuery</p>
+                </div>
+                <div class='subitem-wrap'>
+                    <img alt='React' class='lazyPORT'
+                        data-src='https://img.icons8.com/ios-filled/250/228BE6/react-native.png' />
+                    <p>React</p>
+                </div>
+            </div>
+        </div>
+
+        <div class='item git'>
+            <div class='item-wrap'>
+                <img alt='Git)' class='lazyPORT' data-src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjBSdXLZHcDAbJOD_IhDpXJ52LsOhi2QpUcXFHgKQdTWmEIHm6cLB6h_eJNbzLk4ScK3WZhEiSg3-OoszKsBU7WoDr456sJzedOtT3SWw2REANYhzlUb8WgEXZX1aMQu9TlYMSC-X1xJzyB7pOqMU-DTyS6n1HqDgzDyd8lrqeb3GU50YmSooVI-9luMIU/s100/git.png' />
+                <p>Git</p>
+            </div>
+            <div class='subitem'>
+                <div class='subitem-wrap'>
+                    <img alt='GitHub' class='lazyPORT'
+                        data-src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg-7TTjpxw0R65sDiqRxBRu2b0qetGQCdIRSCH1RKByKUcMW5W1DdiehunBmIMvDpIf91pI6U9J33x2Vie3fSnaISOykhRnEVxBxMxIpx_K5_gelaywo_mjIzNcA5l7Ue4fT3Jp5QrwH1HMnbwRjbaW2gpQOjanamLjFlzPWvBP1WbGjVACypX4r6pLeRU/s100/github.png' />
+                    <p>GitHub</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class='kanan'>
+
+        <div class='item php'>
+            <div class='item-wrap'>
+                <img alt='Hypertext Preprocessor (PHP)' class='lazyPORT'
+                    data-src='https://img.icons8.com/fluency/240/elephant.png' />
+                <p>Hypertext Preprocessor (PHP)</p>
+            </div>
+        </div>
+
+        <div class='item python'>
+            <div class='item-wrap'>
+                <img alt='Python' class='lazyPORT'
+                    data-src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjpwRqOIm3EuUeQVNxr6jeKJzp8tBzzZ3twTd33XPUh-buDRd0IhV5NKMEUqrp4XXE3DoUG-jP6nUQDG20H0JDVrZfcNlj8ZCTZ-5tXM9gS3ZuGLQmAbuiDm0tL5-8CN2t7iP41xYpHw6WNbcCAugEOQLoNiYGI-cB5AC-2R0lxKt-VTmf0eCWSyH7Rg_Y/s100/Python.png' />
+                <p>Python</p>
+            </div>
+        </div>
+
+        <div class='item vb'>
+            <div class='item-wrap'>
+                <img alt='Visual Basic (VB)' class='lazyPORT'
+                    data-src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhjIrF2AqDz3nyuOTX_rYTxM4F7Maw1IjpnRm-YmxHtarM7710kR0JUb8HBZL-V84HU7Gx74yNdzqecxb9u9oWEeIJYmu4Z4NpWrF-DVWPJFDdo7qvBA29SLF-ISqELnOevWmpRiv08TvrZv2xxbssNkE2KOS1KaT3COa8OQpkPWdebaxRfmMsGLa2tTGI/s1600/vb.png' />
+                <p>Visual Basic (VB)</p>
+            </div>
+            <div class='subitem'>
+                <div class='subitem-wrap'>
+                    <img alt='Excel VBA' class='lazyPORT'
+                        data-src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhlXSbi3ADgf6BmxuXmjYo2JiPlEIcTeh-Q2r1oSNAY-4QJexg2MHvTNwtgMeAC0zbHhbNofG4qtc7nuQN87WM4K6kOX398ALwHZiy3T1vW7lCua9u7YjOH6VrSvdwWZnjwYIx9YmnuM8UTo8V4ve1WC46Qzs1ZFQ4GlelsSH5fCQP7DOPk_VkwKs6_Vos/s1600/excel%20vba.png' />
+                    <p>Excel VBA</p>
+                </div>
+            </div>
+        </div>
+
+        <div class='item r'>
+            <div class='item-wrap'>
+                <img alt='R Statistical Computing' class='lazyPORT'
+                    data-src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhk7EO39wxUdMC6wAiT86OlxDG8XLeGdbX1ZWDBsej9j9uVRbcTKHrIaF6Gxfges96PTro9OKHyu3KYRkGQHhVqpCP7fL1OtUUT_O9R01zXlBF8ocltDEDuzKt_6FG5GeDGUrPQgA_f2gVGvcHyougpABqqFbUztYhg4Ze68Tqlus9Ka5fk_H3TqP9PONM/s1600/r.png' />
+                <p>R Statistical Computing</p>
+            </div>
+        </div>
+
+    </div>
+
+</div>
