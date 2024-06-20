@@ -8,7 +8,7 @@ library(readxl)
 Data_path_new <- read_excel("E:/Blog/Learn/R/assets/Data Total No R.xlsx", 
   col_types = c("text", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric"))
 
-Data_z <- scale(x = Data_path_new [ ,3:26])
+Data_z <- scale(x = Data_path_new [ ,2:25])
 Data_dist <- dist(x = Data_z, method = "euclidean")
 Data_A <- hclust(d = Data_dist, method = "average")
 Dendogram <-fviz_dend(Data_A, cex = 0.5, main = "Cluster Dendrogram Average Linkage")
