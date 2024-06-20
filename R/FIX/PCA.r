@@ -18,8 +18,8 @@ pca <- fviz_pca_biplot(res.pca,
                       geom.var = c("text"),
                       col.var = "#851b85",
                       habillage = Data_path_new$Genotipe,
-                      xlab = "PC1 (42.1%)",
-                      ylab = "PC2 (22.9%)"
+                      xlab = "PC1 (42.2%)",
+                      ylab = "PC2 (16.5%)"
                       ) +
        geom_text(aes(label = Data_path_new$Genotipe), vjust = -1)
 
