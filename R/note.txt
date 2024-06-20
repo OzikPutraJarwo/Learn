@@ -1,0 +1,2 @@
+- Kenapa kok di grafik isinya 2 PC, sedangkan yg leibh dari 1 eigenvaluenya ada 5?
+- PCnya ini bener cuma 12 atau sesuai variabelnya (24)?
