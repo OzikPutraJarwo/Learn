@@ -1,5 +1,5 @@
 library(readxl)
-Data_path_new <- read_excel("E:/Blog/Learn/R/assets/Data Total No R.xlsx", 
+Data_path_new <- read_excel("assets/Data Total No R.xlsx", 
   col_types = c("text", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric"))
 
 library(factoextra)

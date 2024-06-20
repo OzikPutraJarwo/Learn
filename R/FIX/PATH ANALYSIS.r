@@ -1,5 +1,5 @@
 library(readxl)
-Excel_PATH_ANALYSIS <- read_excel("./assets/PATH ANALYSIS 2.xlsx", col_types = c("numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric"))
+Excel_PATH_ANALYSIS <- read_excel("assets/Path Analysis.xlsx", col_types = c("numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric"))
 
 # Path analysis model
 model <- "BSB ~ TT + JD + DB + JCA + JCT + JCB + JCL + CP + JR + JAR + JPT + BPT + BPL + PP + LP + TP + JBP + JBT + BBT + BBL + PB + LB + TB"

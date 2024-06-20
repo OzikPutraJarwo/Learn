@@ -14,7 +14,7 @@ for (info in sheet_info) {
   sheet <- info$sheet
   col_name <- info$col_name
   
-  RAK <- read_excel("E:/Blog/Learn/R/assets/Data Kedelai.xlsx", 
+  RAK <- read_excel("assets/Data Kedelai.xlsx", 
                     sheet = sheet,
                     col_types = c("text", "text", "numeric"))
   
