@@ -50,18 +50,18 @@ for (info in sheet_info) {
 \n")
   dmrt <- duncan.test(anova, "Perlakuan", group=TRUE, console=TRUE)
 
-  cat("\
--------------------------------------
-|       Uji lanjut: TukeyHSD        |
--------------------------------------
-\n")
-  TukeyHSD(anova, "Perlakuan")
+#   cat("\
+# -------------------------------------
+# |       Uji lanjut: TukeyHSD        |
+# -------------------------------------
+# \n")
+#   TukeyHSD(anova, "Perlakuan")
 
-  cat("\
--------------------------------------
-|       Uji lanjut: EMMEANS         |
--------------------------------------
-\n")
-  emm <- emmeans(anova, "Perlakuan")
-  pairs(emm, adjust = "tukey")
+#   cat("\
+# -------------------------------------
+# |       Uji lanjut: EMMEANS         |
+# -------------------------------------
+# \n")
+#   emm <- emmeans(anova, "Perlakuan")
+#   pairs(emm, adjust = "tukey")
 }

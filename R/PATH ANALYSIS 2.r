@@ -1,5 +1,5 @@
 library(readxl)
-Mencoba_Path_Analysis <- read_excel("./assets/PATH ANALYSIS.xlsx", 
+Mencoba_Path_Analysis <- read_excel("../assets/PATH ANALYSIS.xlsx", 
   col_types = c("numeric", "numeric", "numeric", 
                 "numeric", "numeric", "numeric", 
                 "numeric"))
