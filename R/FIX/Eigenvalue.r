@@ -7,7 +7,7 @@ library(readxl)
 library(dplyr)
 
 # Membaca data dari file Excel
-data <- read_excel("assets/Data Total No R.xlsx")
+data <- read_excel("R/assets/Data Total No R.xlsx")
 
 # Melihat data yang telah diimpor
 # print(data)
