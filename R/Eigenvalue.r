@@ -1,21 +1,9 @@
-# Instalasi library (jika belum diinstal)
-# install.packages("readxl")
-# install.packages("dplyr")
-
-# Memuat library yang dibutuhkan
 library(readxl)
 library(dplyr)
 
 # Membaca data dari file Excel
-data <- read_excel("R/assets/Data Total No R.xlsx")
-
-# Melihat data yang telah diimpor
-# print(data)
-
-# Memeriksa struktur data untuk melihat tipe kolom
+data <- read_excel("./assets/Data Total No R.xlsx")
 str(data)
-
-# Mengonversi semua kolom kecuali 'Genotipe' menjadi numerik
 numeric_data <- data %>% select(-Genotipe) %>% mutate(across(everything(), as.numeric))
 
 # Memeriksa jika ada NA yang muncul setelah konversi
@@ -42,14 +30,10 @@ results <- data.frame(
     Variance_Percent = explained_variance_ratio * 100,
     Cumulative_Variance_Percent = cumulative_variance_ratio * 100
 )
-
-# Menampilkan hasil
 print(results)
 
 # Melihat loadings (kontribusi variabel pada komponen utama)
 loadings <- pca$rotation
-
-# Menampilkan semua loadings
 print(loadings)
 
 # Memfilter PC dengan eigenvalues lebih dari 1
@@ -57,5 +41,5 @@ significant_pcs <- results$Component[results$Eigenvalue > 1]
 filtered_loadings <- loadings[, significant_pcs]
 
 # Menampilkan loadings yang difilter
-print("Loadings")
+print("Filtered Loadings")
 print(filtered_loadings)

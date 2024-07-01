@@ -1,8 +1,8 @@
 library(readxl)
-Data_path_new <- read_excel("R/assets/Data Total No R.xlsx", 
-  col_types = c("text", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric"))
-
 library(factoextra)
+
+Data_path_new <- read_excel("./assets/Data Total No R.xlsx", 
+  col_types = c("text", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric"))
 
 # Lakukan PCA dengan data yang benar
 res.pca <- prcomp(Data_path_new[, -which(names(Data_path_new) %in% c("Genotipe"))], scale. = TRUE)
@@ -18,8 +18,8 @@ pca <- fviz_pca_biplot(res.pca,
   geom.var = c("text", "point"),
   col.var = "#851b85",
   habillage = Data_path_new$Genotipe,
-  xlab = "PC1 (42.2%)",
-  ylab = "PC2 (16.5%)"
+  # xlab = "PC1 (42%)",
+  # ylab = "PC2 (19.3%)"
   ) +
   geom_text(aes(label = Data_path_new$Genotipe), vjust = -1)
 
