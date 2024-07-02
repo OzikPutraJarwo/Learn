@@ -1,18 +1,10 @@
 library(readxl)
 library(dplyr)
 
-# Membaca data dari file Excel
+# Read xl & standarisasi
 data <- read_excel("./assets/Data Total No R.xlsx")
-str(data)
 numeric_data <- data %>% select(-Genotipe) %>% mutate(across(everything(), as.numeric))
-
-# Memeriksa jika ada NA yang muncul setelah konversi
-# print(sapply(numeric_data, function(x) sum(is.na(x))))
-
-# Menghapus baris dengan NA (jika ada)
 numeric_data <- numeric_data %>% na.omit()
-
-# Standarisasi data
 data_std <- scale(numeric_data)
 
 # Inisialisasi PCA
@@ -30,16 +22,12 @@ results <- data.frame(
     Variance_Percent = explained_variance_ratio * 100,
     Cumulative_Variance_Percent = cumulative_variance_ratio * 100
 )
+cat("\nPrincipal Component Value\n\n")
 print(results)
 
-# Melihat loadings (kontribusi variabel pada komponen utama)
-loadings <- pca$rotation
-print(loadings)
-
-# Memfilter PC dengan eigenvalues lebih dari 1
+# Loadings
+loadings <- pca$rotation # All
 significant_pcs <- results$Component[results$Eigenvalue > 1]
-filtered_loadings <- loadings[, significant_pcs]
-
-# Menampilkan loadings yang difilter
-print("Filtered Loadings")
+filtered_loadings <- loadings[, significant_pcs] # Filtered
+cat("\nFiltered Loadings\n\n")
 print(filtered_loadings)
