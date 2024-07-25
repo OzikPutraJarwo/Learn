@@ -15,7 +15,7 @@ for (info in sheet_info) {
                     sheet = sheet,
                     col_types = c("text", "text", "numeric"))
   
-  anova_formula <- as.formula(paste(col_name, "~ Ulangan + Perlakuan"))
+  anova_formula <- as.formula(paste(col_name, "~ Perlakuan"))
   anova <- aov(anova_formula, data = RAK)
 
   cat("\
