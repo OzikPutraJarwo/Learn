@@ -23,7 +23,7 @@ plot(mod,
      repel=TRUE
      )
 
-# Which-won-where (polygon)
+# Which-won-where (polygon) :)
 plot(mod,
      type = 3,
      col.gen = 'blue',
@@ -49,7 +49,7 @@ plot(mod,
      size.text.gen = 4
      )
 
-# Ranking genotypes
+# Ranking genotypes :)
 plot(mod,
      type = 8,
      col.gen = 'blue',
