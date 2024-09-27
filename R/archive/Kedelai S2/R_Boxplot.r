@@ -4,17 +4,11 @@ library(ggplot2)
 library(tidyr)
 
 # File path
-file_path <- "E:/Blog/Learn/R/archive/Kedelai/Data Boxplot Lengkap.xlsx"
+file_path <- "E:/Blog/Learn/R/archive/Kedelai S2/Data Boxplot Lengkap.xlsx"
 
 # Sheet details
 sheets <- list(
-  list(Sheet = "PT", xTitle = "Galur", yTitle = "Panjang Tunas (cm)")
-#  list(Sheet = "PP", xTitle = "Galur", yTitle = "Panjang Polong (mm)"),
-#  list(Sheet = "LP", xTitle = "Galur", yTitle = "Lebar Polong (mm)"),
-#  list(Sheet = "TP", xTitle = "Galur", yTitle = "Tebal Polong (mm)"),
-#  list(Sheet = "PB", xTitle = "Galur", yTitle = "Panjang Biji (mm)"),
-#  list(Sheet = "LB", xTitle = "Galur", yTitle = "Lebar Biji (mm)"),
-#  list(Sheet = "TB", xTitle = "Galur", yTitle = "Tebal Biji (mm)")
+  list(Sheet = "PanjangTunas", xTitle = "Galur", yTitle = "Panjang Tunas (cm)")
 )
 
 # Process
