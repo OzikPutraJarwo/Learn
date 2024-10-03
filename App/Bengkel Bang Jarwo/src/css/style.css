@@ -8,6 +8,7 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
   font-family: "Nunito", sans-serif;
   line-height: 1.4;
   scroll-behavior: smooth;
+  box-sizing: border-box;
 }
 
 a {
@@ -114,6 +115,10 @@ header .wrap {
   grid-template-columns: 1fr 150px 1fr;
 }
 
+header .mobile-nav {
+  display: none;
+}
+
 header .left nav {
   display: flex;
   gap: 2rem;
@@ -125,12 +130,20 @@ header .left nav .home {
   width: 19px;
 }
 
-header .left nav .home svg {
+header .left nav :not(.home) {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+header .left nav svg {
+  width: 19px;
+  height: 19px;
   transition: .2s all;
   fill: #4877ac;
 }
 
-header .left nav .home svg:hover {
+header .left nav a:hover svg {
   fill: #fec200;
 }
 
@@ -421,4 +434,109 @@ footer .mid .blog-title {
   color: #cbcbcb;
   text-align: center;
   padding: 1.5rem;
+}
+
+@media (max-width: 800px) {
+html {
+    font-size: 14px;
+}
+
+#top {
+    padding: 1rem;
+}
+
+#top .wrap {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+#top .wrap > * {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+#top .wrap > * a {
+    display: grid;
+    grid-template-columns: 14px 1fr;
+}
+
+header .mobile-nav {
+  display: block;
+  line-height: 0;
+  cursor: pointer;
+  user-select: none;
+}
+
+header .left nav {
+  display: none;
+}
+
+header .mobile-nav svg {
+  width: 20px;
+}
+
+header .right a span {
+  display: none;
+}
+
+header .mid img {
+  width: 52px;
+  filter: none;
+}
+
+header .left nav.show {
+  position: absolute;
+  display: grid;
+  background: white;
+  width: 100%;
+  left: 0;
+  top: 53px;
+  padding: 1.2rem;
+  border-top: 2px solid #eee;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+header .left nav.show .home {
+  display: none;
+}
+
+#hero .text h1 {
+    font-size: 2.8rem;
+    line-height: 3rem;
+}
+
+#service .content {
+    grid-template-columns: 1fr;
+}
+
+#service .content .item .img img {
+    object-fit: cover;
+    width: 100%;
+    height: 150px;
+}
+
+#order .content {
+    grid-template-columns: 1fr;
+}
+
+#order .img img {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+}
+
+footer .wrap {
+    grid-template-columns: 1fr;
+}
+
+footer .mid {
+    order: 1;
+}
+
+footer .left, footer .right {
+    order: 2;
+}
 }
