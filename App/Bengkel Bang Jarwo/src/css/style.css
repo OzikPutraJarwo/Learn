@@ -230,6 +230,59 @@ header .right a svg {
   font-size: 1.3rem;
 }
 
+#service .content {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 1.5rem;
+}
+
+#service .content .item {
+  background: #eee;
+  padding: 1.5rem;
+}
+
+#service .content .item .img {
+  line-height: 0;
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+#service .content .item .before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-top: 30px solid #eeeeee;
+  border-right: 30px solid transparent;
+  z-index: 1;
+}
+
+#service .content .item .after {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-bottom: 30px solid #eeeeee;
+  border-left: 30px solid transparent;
+  z-index: 1;
+}
+
+#service .content .item .img img {
+  position: relative;
+}
+
+
+#service .content .item h3 {
+  margin: 0.5rem 0;
+  font-size: 1.2rem;
+}
+
+#service .content .item p {
+  font-size: .9rem;
+}
+
 /* ---------------------------------- FOOTER ---------------------------------- */
 
 footer {
