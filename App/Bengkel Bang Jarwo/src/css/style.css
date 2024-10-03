@@ -24,6 +24,37 @@ img {
   height: auto;
 }
 
+main {
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+section .sec-title {
+  text-align: center;
+  font-weight: 900;
+  font-size: 1.7rem;
+  margin-bottom: 1.5rem;
+}
+
+section .sec-desc {
+  text-align: center;
+  color: #4877ac;
+  font-weight: 800;
+  margin-bottom: .5rem;
+}
+
+section .sec-desc:before {
+  content: "▰▰▰";
+  margin-right: 1rem;
+}
+
+section .sec-desc:after {
+  content: "▰▰▰";
+  margin-left: 1rem;
+}
+
 /* ---------------------------------- TOP ---------------------------------- */
 
 .wrap {
@@ -142,6 +173,8 @@ header .right a:hover {
 header .right a svg {
   width: 14px;
 }
+
+/* ---------------------------------- HERO ---------------------------------- */
 
 #hero {
   position: relative;
