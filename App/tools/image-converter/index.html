@@ -21,8 +21,20 @@
 </head>
 <body>
     <h1>Image Converter</h1>
-    <input type="file" id="imageInput" accept="image/png" />
-    <button id="convert">Convert to JPEG</button>
+    <input type="file" id="imageInput" accept="image/png, image/jpeg, image/webp, image/gif, image/bmp, image/ico, image/avif" />
+    <br/>
+    <label for="outputFormat">Convert to:</label>
+    <select id="outputFormat">
+        <option value="image/jpeg">JPEG</option>
+        <option value="image/png">PNG</option>
+        <option value="image/webp">WebP</option>
+        <option value="image/bmp">BMP</option>
+        <option value="image/gif">GIF</option>
+        <option value="image/ico">ICO</option>
+        <option value="image/avif">AVIF</option>
+    </select>
+    <br/><br/>
+    <button id="convert">Convert Image</button>
     <br/><br/>
     <img id="outputImage" alt="Converted Image" />
     <a id="downloadLink" style="display: none;">Download Converted Image</a>
@@ -31,9 +43,10 @@
         document.getElementById('convert').addEventListener('click', async () => {
             const fileInput = document.getElementById('imageInput');
             const file = fileInput.files[0];
+            const outputFormat = document.getElementById('outputFormat').value;
 
             if (!file) {
-                alert('Please select a PNG image.');
+                alert('Please select an image (PNG, JPEG, WebP, GIF, BMP, ICO, AVIF).');
                 return;
             }
 
@@ -46,7 +59,7 @@
                 canvas.height = img.height;
                 ctx.drawImage(img, 0, 0);
 
-                // Convert to JPEG
+                // Convert to selected format
                 canvas.toBlob((blob) => {
                     const url = URL.createObjectURL(blob);
                     const outputImage = document.getElementById('outputImage');
@@ -54,11 +67,12 @@
                     outputImage.style.display = 'block';
 
                     const downloadLink = document.getElementById('downloadLink');
+                    const extension = outputFormat.split('/')[1]; // Get the file extension
                     downloadLink.href = url;
-                    downloadLink.download = 'converted.jpg';
+                    downloadLink.download = `converted.${extension}`;
                     downloadLink.style.display = 'inline';
                     downloadLink.innerText = 'Download Converted Image';
-                }, 'image/jpeg');
+                }, outputFormat);
             };
         });
     </script>
