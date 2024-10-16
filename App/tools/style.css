@@ -12,7 +12,7 @@ b,strong{font-weight:bolder}
 code,kbd,samp{font-family:monospace,monospace;font-size:1em}
 small{font-size:80%}
 sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}
-sub{bottom:-.25em}
+sub{bottom:-.25em;}
 sup{top:-.5em}
 img{border-style:none}
 button,input,optgroup,select,textarea{max-width: 100%;font-family:inherit;font-size:100%;line-height:1.15;margin:0}
@@ -32,7 +32,7 @@ textarea{overflow:auto}
 ::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}
 details{display:block}
 summary{display:list-item}
-template,[hidden],.hide{display:none}
+template,[hidden],.hide{display:none;}
 a{text-decoration:none}
 h1,h2,h3,h4,h5,h6,p{margin:0;padding:0}
 
@@ -46,6 +46,7 @@ h1,h2,h3,h4,h5,h6,p{margin:0;padding:0}
 }
 
 html {
+    font-size: 14px;
     line-height: 1.15;
     -webkit-text-size-adjust: 100%;
     color: #d3d3d3;
@@ -55,8 +56,29 @@ html {
 body {
     height: 100%;
     display: grid;
-    grid-template-columns: 250px 1fr;
+    grid-template-columns: 17rem 1fr;
     background: #1c1e23;
+}
+
+td {
+    word-break: break-word;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #404348;
+    border-radius: 1rem;
+}
+
+::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+    background-color: #474840;
+    border-radius:1rem;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 1rem;
+    background-color: #ff5467;
 }
 
 /* =================== HEADER =================== */
@@ -105,21 +127,40 @@ nav .item .icon {
 
 nav .item .icon svg {
     transition: .2s all;
+}
+
+nav .item:not(.stroke) .icon svg {
     fill: #929292;
+}
+
+nav .item.stroke .icon svg {
+    stroke: #929292
 }
 
 nav .item:hover, nav .item.active {
     color: #ff5467;
 }
 
-nav .item:hover svg, nav .item.active svg {
+nav .item:hover:not(.stroke) svg, nav .item.active:not(.stroke) svg {
     fill: #ff5467;
+}
+
+nav .item:hover.stroke svg, nav .item.active.stroke svg {
+    stroke: #ff5467;
 }
 
 /* =================== MAIN =================== */
 
 main {
     padding: 2rem;
+}
+
+main section {
+    display: none;
+}
+
+main section.active {
+    display: block;
 }
 
 /* =================== HOME =================== */
@@ -132,7 +173,8 @@ main {
 
 #home .greet {
     display: grid;
-    grid-template-columns: 1fr 220px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 2rem;
 }
 
 #home .greet p {
@@ -140,9 +182,14 @@ main {
     font-weight: 600;
 }
 
+#home .greet .left {
+    grid-column: span 2;
+}
+
 #home .greet .right {
     position: relative;
     font-size: .9rem;
+    grid-column: span 2;
 }
 
 #home .greet input {
@@ -152,13 +199,14 @@ main {
     padding: 0.7rem 1.4rem;
     border-radius: 0.7rem;
     color: #929292;
+    width: 100%;
 }
 
 #home .greet svg {
     position: absolute;
     top: 50%;
-    right: 1.4rem;
-    width: 20px;
+    right: .9rem;
+    width: 17px;
     fill: #929292;
     transform: translateY(-50%);
 }
@@ -177,6 +225,8 @@ main {
     text-align: center;
     display: grid;
     align-items: start;
+    cursor: pointer;
+    transition: .2s all;
 }
 
 #home .menu .item .logo {
@@ -186,6 +236,7 @@ main {
     line-height: 0;
     padding: 17px;
     border-radius: 100%;
+    transition: .2s all;
 }
 
 #home .menu .item .title {
@@ -217,4 +268,364 @@ main {
 #home .menu .item.qr-generator .logo {
     fill: #b1b4b9;
     background: #b1b4b91f;
+}
+
+#home .menu .item.bulk-file-renamer:hover {
+    background: #fb8f5c1f;
+}
+
+#home .menu .item.pdf-combiner:hover {
+    background: #ff576d1f;
+}
+
+#home .menu .item.image-converter:hover {
+    background: #009c721f;
+}
+
+#home .menu .item.qr-generator:hover {
+    background: #b1b4b926;
+}
+
+/* =================== BULK NAME RENAMER =================== */
+
+#bulk-file-renamer.active {
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    gap: 2rem;
+}
+
+#bulk-file-renamer h2 {
+    grid-column: span 2;
+}
+
+#bulk-file-renamer .input {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+#bulk-file-renamer .input-files {
+    border: 0.2rem dashed #2a2d32;
+    border-radius: 0.5rem;
+    padding: 0.8rem;
+}
+
+#bulk-file-renamer .input-files label {
+    text-align: center;
+    padding: 2rem;
+    cursor: pointer;
+    transition: .2s all;
+    display: block;
+    border-radius: 0.5rem;
+    background: #2a2d32;
+}
+
+#bulk-file-renamer .input-files label:hover, #bulk-file-renamer .input-files label.drag-active {
+    background: transparent;
+}
+
+#bulk-file-renamer .input-files label p {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+#bulk-file-renamer .input-files label span {
+    opacity: .8;
+    margin: 0.5rem 0 1rem;
+    display: block;
+}
+
+#bulk-file-renamer .input-files label div {
+    width: 3rem;
+    height: 3rem;
+    margin: auto;
+    background: #ff5467;
+    border-radius: 100%;
+    padding: 0.3rem;
+    transition: .2s all;
+}
+
+#bulk-file-renamer .input-files label svg {
+    fill: #d3d3d3;
+    transition: .2s all;
+}
+
+#bulk-file-renamer .input-files label:hover div {
+    background: #2a2d32;
+}
+
+#bulk-file-renamer .input-rules {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+}
+
+#bulk-file-renamer .input-rules {
+    background: #404348;
+    border-radius: .8rem;
+    overflow: hidden;
+}
+
+#bulk-file-renamer .input-rules  .left {
+    background: #2a2d32;
+}
+
+#bulk-file-renamer .input-rules .left > div {
+    padding: 0.7rem 1rem;
+    cursor: pointer;
+    transition: .2s all;
+}
+
+#bulk-file-renamer .input-rules .left > .active, #bulk-file-renamer .input-rules .left > div:hover {
+    background: #404348;
+}
+
+#bulk-file-renamer .input-rules .right {
+    padding: 1.5rem;
+}
+
+#bulk-file-renamer .input-rules .right > div {
+    display: none;
+}
+
+#bulk-file-renamer .input-rules .right > .active {
+    display: grid;
+    gap: 0.8rem;
+}
+
+#bulk-file-renamer .input-rules .right > div input, #bulk-file-renamer .input-rules .right > div select {
+    background: #2a2d32;
+    outline: none;
+    border: none;
+    padding: 0.7rem 1rem;
+    border-radius: 0.7rem;
+    color: #d3d3d3;
+    width: 100%;
+}
+
+#bulk-file-renamer .input-rules .right > div select {
+    cursor: pointer;
+    border-right: 1rem solid #2a2d32;
+}
+
+#bulk-file-renamer .input-rules .right > div button {
+    transition: .2s all;
+    background: #ff5467;
+    color: #d3d3d3;
+    border: none;
+    padding: 0.7rem 1rem;
+    border-radius: 0.7rem;
+    cursor: pointer;
+}
+
+#bulk-file-renamer .input-rules .right > div button:hover {
+    background: #2a2d32;
+}
+
+#bulk-file-renamer .input-rules .right > div #bfr-checkbox {
+    display: grid;
+    grid-template-columns: 1.2rem 1fr;
+    gap: 0.6rem;
+    cursor: pointer;
+}
+
+#bulk-file-renamer .output {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+#bulk-file-renamer .output-rules {
+    padding: 1.5rem;
+    background: #2a2d32;
+    border-radius: .8rem;
+    height: 185px;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    position: relative;
+}
+
+#bulk-file-renamer .output-rules #bfr-rules-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    overflow: auto;
+    height: 100%;
+}
+
+#bulk-file-renamer .output-rules #bfr-rules-list > div {
+    display: grid;
+    grid-template-columns: 6rem 1fr 25px;
+    align-items: center;
+}
+
+#bulk-file-renamer .output-rules #bfr-rules-list > div span:nth-child(1) {
+    font-weight: bold;
+}
+
+#bulk-file-renamer .output-rules #bfr-rules-list > div span:nth-child(3) {
+    position: relative;
+    height: 25px;
+    cursor: pointer;
+}
+
+#bulk-file-renamer .output-rules #bfr-rules-list > div span input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+#bulk-file-renamer .output-rules #bfr-rules-list > div span svg {
+    transition: .2s all;
+    stroke: #d3d3d3;
+}
+
+#bulk-file-renamer .output-rules #bfr-rules-list > div span:nth-child(3):hover svg {
+    stroke: #ff5467;
+}
+
+#bulk-file-renamer .output-rules #bfr-rules-remove {
+    transition: .2s all;
+    background: #ff5467;
+    color: #d3d3d3;
+    border: none;
+    padding: 1rem 1rem;
+    font-size: 0.8rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    line-height: 0;
+}
+
+#bulk-file-renamer .output-rules #bfr-rules-remove:hover {
+    background: #404348;
+}
+
+#bulk-file-renamer .output-files {
+    padding: 1.5rem;
+    background: #2a2d32;
+    border-radius: .8rem;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    position: relative;
+}
+
+#bulk-file-renamer .output-files table {
+    text-align: left;
+    margin: 0 -1px;
+}
+
+#bulk-file-renamer .output-files thead {
+    display: grid;
+    
+    width: 100%;
+}
+
+#bulk-file-renamer .output-files thead tr {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 60px;
+}
+
+#bulk-file-renamer .output-files th, #bulk-file-renamer .output-files td {
+    padding: 0;
+    position: relative;
+}
+
+#bulk-file-renamer .output-files th {
+    font-size: 1.1rem;
+    border-bottom: 1px solid #404348;
+    padding: 0 0 1rem;
+}
+
+#bulk-file-renamer .output-files td {
+    font-size: .9rem;
+    line-height: 1.1;
+    padding: 0.5rem 0.8rem;
+    height: 100%;
+    align-content: center;
+}
+
+#bulk-file-renamer .output-files #bfr-files-table input {
+    width: 40px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+#bulk-file-renamer .output-files #bfr-files-table svg {
+    height: 25px;
+    margin-left: -3px;
+    stroke: #d3d3d3;
+    cursor: pointer;
+    transition: .2s all;
+}
+
+#bulk-file-renamer .output-files #bfr-files-table td:last-child:hover svg {
+    stroke: #ff5467;
+}
+
+#bfr-files-table tr:nth-child(odd) {
+    background: #404348;
+}
+
+#bfr-files-table tr:nth-child(even) {
+    background: #25282c;
+}
+
+#bulk-file-renamer .output-files td:first-child {
+    border-right: 0.2rem solid #2a2d32;
+}
+
+#bulk-file-renamer #bfr-files-table {
+    max-height: 205px;
+    overflow: auto;
+    display: grid;
+}
+
+#bulk-file-renamer #bfr-files-table tr {
+    display: grid;
+    grid-template-columns: 1fr 1fr 40px;
+    align-items: center;
+}
+
+#bulk-file-renamer .output-files button {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: #ff5467;
+    border: none;
+    width: 25px;
+    height: 25px;
+    border-radius: .3rem;
+    cursor: pointer;
+    align-items: center;
+    transition: .2s all;
+}
+
+#bulk-file-renamer .output-files button:hover {
+    background: transparent
+}
+
+#bulk-file-renamer .output-files #bfr-files-clear {
+    right: 4.5rem;
+}
+
+#bulk-file-renamer .output-files #bfr-files-clear svg {
+    fill: transparent;
+    stroke: #d3d3d3;
+}
+
+#bulk-file-renamer .output-files #bfr-files-download svg {
+    fill: #d3d3d3;
 }
