@@ -250,6 +250,11 @@ main section.active {
     line-height: 1.2rem;
 }
 
+#home .menu .item.file-analyzer .logo {
+    stroke: #7032ff;
+    background: #7032ff1f;
+}
+
 #home .menu .item.bulk-file-renamer .logo {
     fill: #fb8f5c;
     background: #fb8f5c1f;
@@ -265,9 +270,20 @@ main section.active {
     background: #009c721f;
 }
 
+#home .menu .item.image-compressor .logo {
+    fill: #009c72;
+    background: #009c721f;
+}
+
 #home .menu .item.qr-generator .logo {
     fill: #b1b4b9;
     background: #b1b4b91f;
+}
+
+/* --- */
+
+#home .menu .item.file-analyzer:hover {
+    background: #7032ff1f;
 }
 
 #home .menu .item.bulk-file-renamer:hover {
@@ -279,6 +295,10 @@ main section.active {
 }
 
 #home .menu .item.image-converter:hover {
+    background: #009c721f;
+}
+
+#home .menu .item.image-compressor:hover {
     background: #009c721f;
 }
 
