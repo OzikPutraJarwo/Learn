@@ -325,6 +325,70 @@ main section.active {
 	display: block;
 }
 
+main [data-status]:after {
+	content: attr(data-status);
+	position: absolute;
+	top: 0;
+	right: 0;
+	font-size: .8rem;
+	padding: 0.2rem 1rem;
+	background: #ff5467;
+	border-radius: 0 0 0 1rem;
+}
+
+/* =================== ALL =================== */
+
+.input-files {
+	border: 0.2rem dashed #2a2d32;
+	border-radius: 0.5rem;
+	padding: 0.8rem;
+}
+
+.input-files label {
+	text-align: center;
+	padding: 2rem;
+	cursor: pointer;
+	transition: .2s all;
+	display: block;
+	border-radius: 0.5rem;
+	background: #2a2d32;
+}
+
+.input-files label:hover,
+.input-files label.drag-active {
+	background: transparent;
+}
+
+.input-files label p {
+	font-weight: bold;
+	font-size: 1.2rem;
+}
+
+.input-files label span {
+	opacity: .8;
+	margin: 0.5rem 0 1rem;
+	display: block;
+}
+
+.input-files label div {
+	width: 3rem;
+	height: 3rem;
+	margin: auto;
+	background: #ff5467;
+	border-radius: 100%;
+	padding: 0.3rem;
+	transition: .2s all;
+}
+
+.input-files label svg {
+	fill: #d3d3d3;
+	transition: .2s all;
+}
+
+.input-files label:hover div {
+	background: #2a2d32;
+}
+
 /* =================== HOME =================== */
 
 #home .wrap {
@@ -389,6 +453,8 @@ main section.active {
 	align-items: start;
 	cursor: pointer;
 	transition: .2s all;
+	position: relative;
+	overflow: hidden;
 }
 
 #home .menu .item .logo {
@@ -412,6 +478,14 @@ main section.active {
 	line-height: 1.2rem;
 }
 
+#home .menu .item.unit-converter .logo {
+	background: #feca4c1f;
+}
+
+#home .menu .item.unit-converter .logo * {
+	fill: #feca4c;
+}
+
 #home .menu .item.file-analyzer .logo {
 	stroke: #7032ff;
 	background: #7032ff1f;
@@ -428,12 +502,13 @@ main section.active {
 }
 
 #home .menu .item.image-converter .logo {
-	fill: #009c72;
+	fill: none;
+	stroke: #009c72;
 	background: #009c721f;
 }
 
 #home .menu .item.image-compressor .logo {
-	fill: #009c72;
+	stroke: #009c72;
 	background: #009c721f;
 }
 
@@ -443,6 +518,10 @@ main section.active {
 }
 
 /* --- */
+
+#home .menu .item.unit-converter:hover {
+	background: #feca4c1f;
+}
 
 #home .menu .item.file-analyzer:hover {
 	background: #7032ff1f;
@@ -484,57 +563,6 @@ main section.active {
 	display: flex;
 	flex-direction: column;
 	gap: 2rem;
-}
-
-#bulk-file-renamer .input-files {
-	border: 0.2rem dashed #2a2d32;
-	border-radius: 0.5rem;
-	padding: 0.8rem;
-}
-
-#bulk-file-renamer .input-files label {
-	text-align: center;
-	padding: 2rem;
-	cursor: pointer;
-	transition: .2s all;
-	display: block;
-	border-radius: 0.5rem;
-	background: #2a2d32;
-}
-
-#bulk-file-renamer .input-files label:hover,
-#bulk-file-renamer .input-files label.drag-active {
-	background: transparent;
-}
-
-#bulk-file-renamer .input-files label p {
-	font-weight: bold;
-	font-size: 1.2rem;
-}
-
-#bulk-file-renamer .input-files label span {
-	opacity: .8;
-	margin: 0.5rem 0 1rem;
-	display: block;
-}
-
-#bulk-file-renamer .input-files label div {
-	width: 3rem;
-	height: 3rem;
-	margin: auto;
-	background: #ff5467;
-	border-radius: 100%;
-	padding: 0.3rem;
-	transition: .2s all;
-}
-
-#bulk-file-renamer .input-files label svg {
-	fill: #d3d3d3;
-	transition: .2s all;
-}
-
-#bulk-file-renamer .input-files label:hover div {
-	background: #2a2d32;
 }
 
 #bulk-file-renamer .input-rules {
@@ -833,4 +861,116 @@ main section.active {
 #pop-message.show {
 	bottom: 2rem;
 	transform: none;
+}
+
+/* =================== PDF COMBINER =================== */
+
+#pdf-combiner.active {
+	display: grid;
+	gap: 2rem;
+}
+
+#pdf-combiner .wrap {
+	display: grid;
+	gap: 2rem;
+	grid-template-columns: 400px 1fr;
+}
+
+#pdf-combiner .input {
+	display: flex;
+	gap: 2rem;
+	flex-direction: column;
+}
+
+#pdf-combiner .input-settings {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+#pdf-combiner .input-settings input {
+	background: #2a2d32;
+	outline: none;
+	border: none;
+	padding: 0.7rem 1rem;
+	border-radius: 0.7rem;
+	color: #d3d3d3;
+	width: 100%;
+}
+
+#pdf-combiner .input-settings button {
+	transition: .2s all;
+	background: #ff5467;
+	color: #d3d3d3;
+	border: none;
+	padding: 0.7rem 1rem;
+	border-radius: 0.7rem;
+	cursor: pointer;
+}
+
+#pdf-combiner .input-settings button:hover {
+	background: #2a2d32;
+}
+
+#pdf-combiner .output {
+	padding: 1.5rem;
+	background: #2a2d32;
+	border-radius: .8rem;
+	max-height: calc(100dvh - 4rem);
+}
+
+#pdf-combiner .output h3 {
+	margin-bottom: 1.5rem
+}
+
+#pdf-combiner .output #pdc-file-list {
+	height: 100%;
+	display: flex;
+	gap: 1rem;
+	flex-direction: column;
+	position: relative;
+	overflow: auto;
+}
+
+#pdf-combiner .output #pdc-file-list .file-item {
+	display: grid;
+	grid-template-columns: 70px 1fr calc(30px * 3 + 1rem * 2);
+	gap: 1rem;
+}
+
+#pdf-combiner .output #pdc-file-list .file-item .thumbnail {
+	width: 100%;
+	height: 60px;
+	object-fit: cover;
+	object-position: top;
+}
+
+#pdf-combiner .output #pdc-file-list .file-item div {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	align-items: center;
+	gap: 1rem;
+}
+
+#pdf-combiner .output #pdc-file-list .file-item div button {
+	height: 25px;
+	width: 25px;
+	border: none;
+	display: grid;
+	align-items: center;
+	justify-content: center;
+	background: none;
+	cursor: pointer;
+}
+
+#pdf-combiner .output #pdc-file-list .file-item div button svg {
+	transition: .2s all;
+	stroke: #d3d3d3;
+	fill: none;
+	width: 20px;
+	height: 20px;
+}
+
+#pdf-combiner .output #pdc-file-list .file-item div button svg:hover {
+	stroke: #ff5467;
 }
