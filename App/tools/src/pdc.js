@@ -6,6 +6,7 @@ let pdcfiles = [];
 let pdcthumbnails = [];
 
 pdfInput.addEventListener('change', async (event) => {
+    fileList.innerHTML = "Loading...";
     const newFiles = Array.from(event.target.files);
     for (const file of newFiles) {
         // Tambahkan file baru ke daftar file yang sudah ada

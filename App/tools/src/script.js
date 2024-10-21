@@ -6,7 +6,7 @@ const setActive = (navClass, sectionId) => {
 	document.getElementById(sectionId).classList.add('active');
 };
 
-['home', 'unit-converter', 'bulk-file-renamer', 'pdf-combiner', 'image-converter', 'image-compressor', 'qr-generator', 'file-analyzer'].forEach(name => {
+['home', 'unit-converter', 'bulk-file-renamer', 'pdf-combiner', 'image-converter', 'image-compressor', 'qr-generator', 'doi-to-apa', 'file-analyzer'].forEach(name => {
 	document.querySelectorAll(`.${name}`).forEach(el => {
 		el.addEventListener('click', () => setActive(name, name));
 	});
@@ -66,3 +66,20 @@ function loadScript(selector, src) {
 loadScript(".pdf-combiner", "https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js");
 loadScript(".pdf-combiner", "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js");
 loadScript(".pdf-combiner", "./src/pdc.js");
+loadScript(".qr-generator", "https://unpkg.com/qr-code-styling@1.5.0/lib/qr-code-styling.js");
+
+function copyAll(selector) {
+	const text = Array.from(document.querySelectorAll(selector))
+			.filter(el => el.offsetWidth > 0 && el.offsetHeight > 0)
+			.map(el => el.innerText)
+			.join('\n');
+	if (text) {
+			const textarea = document.createElement('textarea');
+			textarea.value = text;
+			document.body.appendChild(textarea);
+			textarea.select();
+			document.execCommand('copy');
+			document.body.removeChild(textarea);
+			alert('Copied!')
+	}
+}

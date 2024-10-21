@@ -240,6 +240,22 @@ td {
 	background-color: #ff5467;
 }
 
+.btn {
+	transition: .2s all;
+	background: #ff5467;
+	color: #d3d3d3;
+	border: none;
+	outline: none;
+	padding: 0.7rem 1rem;
+	border-radius: 0.7rem;
+	cursor: pointer;
+	width: 100%;
+}
+
+.btn:hover {
+	background: #1c1e23;
+}
+
 /* =================== HEADER =================== */
 
 header {
@@ -517,6 +533,11 @@ main [data-status]:after {
 	background: #b1b4b91f;
 }
 
+#home .menu .item.doi-to-apa .logo {
+	fill: #4572b9;
+	background: #4572b91f;
+}
+
 /* --- */
 
 #home .menu .item.unit-converter:hover {
@@ -545,6 +566,10 @@ main [data-status]:after {
 
 #home .menu .item.qr-generator:hover {
 	background: #b1b4b926;
+}
+
+#home .menu .item.item.doi-to-apa:hover {
+	background: #4572b91f;
 }
 
 /* =================== BULK NAME RENAMER =================== */
@@ -899,20 +924,20 @@ main [data-status]:after {
 }
 
 #pdf-combiner .input-settings label {
-    position: relative;
+	position: relative;
 }
 
 #pdf-combiner .input-settings span {
-    position: absolute;
-    top: 0;
-    right: 0;
-    border-radius: 0 .7rem .7rem 0;
-    background: #ff5467;
-    height: 100%;
-    width: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+	position: absolute;
+	top: 0;
+	right: 0;
+	border-radius: 0 .7rem .7rem 0;
+	background: #ff5467;
+	height: 100%;
+	width: 60px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 #pdf-combiner .input-settings button {
@@ -990,4 +1015,87 @@ main [data-status]:after {
 
 #pdf-combiner .output #pdc-file-list .file-item div button svg:hover {
 	stroke: #ff5467;
+}
+
+/* =================== DOI TO APA =================== */
+
+#doi-to-apa.active,
+#doi-to-apa .wrap {
+	display: grid;
+	gap: 2rem;
+}
+
+#doi-to-apa .input {
+	display: grid;
+	gap: 1rem;
+}
+
+#doi-to-apa .input #dta-doi {
+	width: 100% !important;
+	min-height: 200px;
+	overflow: auto;
+	padding: 1.5rem;
+	background: #2a2d32;
+	border-radius: .8rem;
+	border: none;
+	margin-bottom: 1rem;
+	outline: none;
+	color: #d3d3d3;
+}
+
+#doi-to-apa .output .dta-options {
+	display: grid;
+	grid-template-columns: 1fr 26px;
+	align-items: center;
+}
+
+#doi-to-apa .output .dta-options #dta-copy {
+	padding: 0.3rem 0.3rem 0.4rem;
+	border-radius: 0.4rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	line-height: 0;
+}
+
+#doi-to-apa .output .dta-options #dta-copy svg {
+	fill: #d3d3d3;
+}
+
+#doi-to-apa .output #dta-list {
+	padding: 1.5rem 2rem;
+	background: #2a2d32;
+	border-radius: .8rem;
+	border: none;
+	margin-top: 1rem;
+}
+
+#doi-to-apa .output #dta-list .dta-citation {
+	display: list-item;
+	list-style: decimal;
+	padding: .5rem 0 .5rem 1rem;
+	margin-left: 1rem;
+	cursor: pointer;
+	transition: .2s all;
+}
+
+#doi-to-apa .output #dta-list .dta-citation:hover {
+	color: #ff5467
+}
+
+#doi-to-apa .output #dta-list .dta-info {
+	display: none;
+	padding: 1rem;
+	margin: 1rem 0 1rem 2rem;
+	background: #404348;
+	border-radius: .5rem;
+	font-size: .9rem;
+}
+
+#doi-to-apa .output #dta-list .dta-info span {
+	display: block;
+}
+
+#doi-to-apa .output #dta-list .dta-info:last-child {
+	margin-bottom: 0;
 }
