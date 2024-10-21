@@ -107,7 +107,7 @@ combineBtn.addEventListener('click', async () => {
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = outputFileName.value || 'combined.pdf';
+    a.download = outputFileName.value || 'combined-by-kodejarwo.pdf';
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);

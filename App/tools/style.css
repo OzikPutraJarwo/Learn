@@ -898,6 +898,23 @@ main [data-status]:after {
 	width: 100%;
 }
 
+#pdf-combiner .input-settings label {
+    position: relative;
+}
+
+#pdf-combiner .input-settings span {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 0 .7rem .7rem 0;
+    background: #ff5467;
+    height: 100%;
+    width: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #pdf-combiner .input-settings button {
 	transition: .2s all;
 	background: #ff5467;
@@ -916,7 +933,7 @@ main [data-status]:after {
 	padding: 1.5rem;
 	background: #2a2d32;
 	border-radius: .8rem;
-	max-height: calc(100dvh - 4rem);
+	max-height: calc(100dvh - 7rem);
 }
 
 #pdf-combiner .output h3 {
@@ -924,7 +941,7 @@ main [data-status]:after {
 }
 
 #pdf-combiner .output #pdc-file-list {
-	height: 100%;
+	height: calc(100% - 3rem);
 	display: flex;
 	gap: 1rem;
 	flex-direction: column;
