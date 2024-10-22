@@ -1116,3 +1116,95 @@ main [data-status]:after {
 	transition: .2s all;
 	color: #ff5467;
 }
+
+/* =================== QR GENERATOR =================== */
+
+#qr-generator.active {
+	display: grid;
+	gap: 2rem;
+}
+
+#qr-generator .wrap {
+	display: grid;
+	grid-template-columns: 1fr calc(300px + 3rem);
+	gap: 2rem;
+}
+
+#qr-generator .input, #qr-generator .output .output-wrap {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	position: sticky;
+	top: 2rem;
+}
+
+#qr-generator .input > div, #qr-generator .output > div > div {
+	padding: 1.5rem;
+	background: #2a2d32;
+	border-radius: .8rem;
+	display: flex;
+	gap: 1rem;
+	flex-direction: column;
+	position: relative;
+}
+
+#qr-generator .input {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 1rem
+}
+
+#qr-generator .input .input-wrap {
+	display: grid;
+	gap: 0.5rem;
+}
+
+#qr-generator input, #qr-generator select {
+	background: #1c1e23;
+	outline: none;
+	border: none;
+	padding: 0.7rem 1rem;
+	border-radius: 0.7rem;
+	color: #d3d3d3;
+	width: 100%;
+}
+
+#qr-generator input[type="file"]::file-selector-button {
+	margin-right: 1rem;
+	background: #ff5467;
+	border: none;
+	color: #d3d3d3;
+	border-radius: .3rem;
+	padding: 0.4rem 1rem;
+	cursor: pointer
+}
+
+#qr-generator input[type="color"] {
+	height: 3rem;
+	cursor: pointer
+}
+
+#qr-generator input[type="checkbox"] {
+			width: 15px;
+			height: 15px;
+			cursor: pointer;
+}
+
+#qr-generator select {
+	cursor: pointer;
+	border-right: 1rem solid #1c1e23;
+}
+
+#qr-generator .output .qrg-downset {
+	display: grid;
+	grid-template-columns: 2fr 1.5fr;
+	gap: 1rem;
+}
+
+#qr-generator .output .qrg-down {
+	text-align: center;
+}
+
+#qr-generator .output #qrg-canvas {
+	overflow: auto;
+}
