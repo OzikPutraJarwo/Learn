@@ -65,7 +65,6 @@ function loadScript(selector, src) {
 
 loadScript(".pdf-combiner", "https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js");
 loadScript(".pdf-combiner", "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js");
-loadScript(".pdf-combiner", "./src/pdc.js");
 loadScript(".qr-generator", "https://unpkg.com/qr-code-styling@1.5.0/lib/qr-code-styling.js");
 
 function copyAll(selector) {

@@ -1,3 +1,5 @@
+// DOI to APA
+
 document.getElementById('dta-form').addEventListener('submit', function (event) {
   event.preventDefault();
 
@@ -16,10 +18,13 @@ document.getElementById('dta-form').addEventListener('submit', function (event) 
           if (!response.ok) throw new Error(`Article not found for: ${doi}`);
           return response.json();
         })
-        .then(data => displayCitation(data.message, citationList))
+        .then(data => {
+          displayCitation(data.message, citationList);
+          console.log(data.message);
+        })
         .catch(error => {
-          const errorItem = document.createElement('li');
-          errorItem.className = 'error';
+          const errorItem = document.createElement('div');
+          errorItem.className = 'dta-error';
           errorItem.textContent = error.message;
           citationList.appendChild(errorItem);
         });
@@ -41,12 +46,13 @@ function displayCitation(item, citationList) {
   const volume = item.volume ? item.volume : '';
   const issue = item.issue ? item.issue : '';
   const page = item.page ? item.page : '';
+  const URL = item.URL ? item.URL : '';
 
-  const citation = `${authors}. ${year}. ${title}. ${journal}, ${volume}${issue ? `(${issue})` : ''}, ${page}.`;
+  const citation = `${authors}. ${year}. ${title}. ${journal}, ${volume}${issue ? `(${issue})` : ''}, ${page}. ${URL}`;
 
   const citationItem = document.createElement('div');
   citationItem.className = 'dta-citation';
-  citationItem.textContent = citation;
+  citationItem.textContent = citation.replace("Year not available. ","").replace("..",".");
 
   const infoDiv = document.createElement('div');
   infoDiv.className = 'dta-info';
@@ -58,6 +64,8 @@ function displayCitation(item, citationList) {
     <span>Volume: ${volume}</span>
     <span>Issue: ${issue}</span>
     <span>Page: ${page}</span>
+    <span>Publisher: ${item.publisher}</span>
+    <span>ISSN: ${item.ISSN}</span>
     <span>DOI: ${item.DOI}</span>
   `.trim();
 

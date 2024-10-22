@@ -296,6 +296,11 @@ nav .item {
 	cursor: pointer;
 }
 
+nav .item a {
+	color: #929292;
+	transition: .2s all;
+}
+
 nav .item .icon {
 	display: flex;
 }
@@ -313,7 +318,9 @@ nav .item.stroke .icon svg {
 }
 
 nav .item:hover,
-nav .item.active {
+nav .item.active,
+nav .item:hover a,
+nav .item.active a {
 	color: #ff5467;
 }
 
@@ -1098,4 +1105,14 @@ main [data-status]:after {
 
 #doi-to-apa .output #dta-list .dta-info:last-child {
 	margin-bottom: 0;
+}
+
+#doi-to-apa .output #dta-list .dta-error {
+	display: list-item;
+	list-style: decimal;
+	padding: .5rem 0 .5rem 1rem;
+	margin-left: 1rem;
+	cursor: pointer;
+	transition: .2s all;
+	color: #ff5467;
 }

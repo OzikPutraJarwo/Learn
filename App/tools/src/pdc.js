@@ -1,3 +1,5 @@
+// PDF Combiner
+
 const pdfInput = document.getElementById('pdc-input-files');
 const fileList = document.getElementById('pdc-file-list');
 const combineBtn = document.getElementById('pdc-combine');
@@ -9,21 +11,19 @@ pdfInput.addEventListener('change', async (event) => {
     fileList.innerHTML = "Loading...";
     const newFiles = Array.from(event.target.files);
     for (const file of newFiles) {
-        // Tambahkan file baru ke daftar file yang sudah ada
         pdcfiles.push(file);
         const thumbnailSrc = await createThumbnail(file);
         pdcthumbnails.push(thumbnailSrc);
     }
     displayFiles();
-    combineBtn.disabled = pdcfiles.length === 0; // Aktifkan tombol jika ada file
+    combineBtn.disabled = pdcfiles.length === 0; 
 });
 
 function displayFiles() {
     fileList.innerHTML = '';
     for (let i = 0; i < pdcfiles.length; i++) {
-        // Hapus item dengan thumbnail undefined
         if (pdcthumbnails[i] === undefined) {
-            continue; // Skip this iteration
+            continue;
         }
 
         const fileItem = document.createElement('div');
@@ -48,7 +48,6 @@ async function createThumbnail(file) {
     const page = await pdfDoc.getPage(1);
     const viewport = page.getViewport({ scale: 1 });
 
-    // Set thumbnail size while keeping aspect ratio
     const scale = 200 / Math.max(viewport.width, viewport.height);
     const scaledViewport = page.getViewport({ scale });
 
@@ -62,24 +61,23 @@ async function createThumbnail(file) {
         viewport: scaledViewport,
     };
     await page.render(renderContext).promise;
-    return canvas.toDataURL(); // Return the thumbnail as a data URL
+    return canvas.toDataURL();
 }
 
 function moveFile(index, direction) {
     const newIndex = index + direction;
     if (newIndex < 0 || newIndex >= pdcfiles.length) return;
 
-    // Swap pdcfiles and pdcthumbnails
     [pdcfiles[index], pdcfiles[newIndex]] = [pdcfiles[newIndex], pdcfiles[index]];
     [pdcthumbnails[index], pdcthumbnails[newIndex]] = [pdcthumbnails[newIndex], pdcthumbnails[index]];
-    displayFiles(); // Re-render the list
+    displayFiles(); 
 }
 
 function removeFile(index) {
     pdcfiles.splice(index, 1);
-    pdcthumbnails.splice(index, 1); // Remove corresponding thumbnail
+    pdcthumbnails.splice(index, 1);
     displayFiles();
-    combineBtn.disabled = pdcfiles.length === 0; // Nonaktifkan tombol jika tidak ada file
+    combineBtn.disabled = pdcfiles.length === 0;
 }
 
 combineBtn.addEventListener('click', async () => {
