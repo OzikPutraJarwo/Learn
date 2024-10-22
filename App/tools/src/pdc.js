@@ -86,7 +86,7 @@ combineBtn.addEventListener('click', async () => {
     pdcthumbnails = pdcthumbnails.filter(thumbnail => thumbnail !== undefined);
 
     if (pdcfiles.length === 0) {
-        alert('Silakan pilih file PDF untuk digabungkan.');
+        showMessage("Upload file first!");
         return;
     }
 

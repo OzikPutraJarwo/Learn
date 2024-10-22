@@ -79,6 +79,6 @@ function copyAll(selector) {
 			textarea.select();
 			document.execCommand('copy');
 			document.body.removeChild(textarea);
-			alert('Copied!')
+			showMessage("Copied!");
 	}
 }

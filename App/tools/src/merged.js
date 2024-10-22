@@ -80,7 +80,7 @@ function copyAll(selector) {
 			textarea.select();
 			document.execCommand('copy');
 			document.body.removeChild(textarea);
-			alert('Copied!')
+			showMessage("Copied!");
 	}
 }
 // Bulk File Renamer
@@ -367,12 +367,11 @@ function removeFile(index) {
 }
 
 combineBtn.addEventListener('click', async () => {
-    // Hapus item dengan thumbnail undefined sebelum menggabungkan
     pdcfiles = pdcfiles.filter((_, index) => pdcthumbnails[index] !== undefined);
     pdcthumbnails = pdcthumbnails.filter(thumbnail => thumbnail !== undefined);
 
     if (pdcfiles.length === 0) {
-        alert('Silakan pilih file PDF untuk digabungkan.');
+				showMessage("Upload file first!");
         return;
     }
 
