@@ -17,8 +17,6 @@
 - [x] DOI to APA
 
 ## Next Update:
-- QR code generator
-  - gradient function
 - DOI to APA
   - more reference style
   

@@ -9,7 +9,7 @@
   <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/OzikPutraJarwo/Learn@XXX/App/tools/style.min.css"/> -->
   <!-- <b:skin><![CDATA[]]></b:skin> -->
   <link href='/' rel='canonical'/>
-  <script type="text/javascript" src="https://unpkg.com/qr-code-styling@1.5.0/lib/qr-code-styling.js"></script>
+  <script type="text/javascript" src="https://unpkg.com/qr-code-styling/lib/qr-code-styling.js"></script>
 </head>
 <body>
 
@@ -248,8 +248,8 @@
           <div class="input-wrap">
             <p>Link or Text Data</p>
             <input type="text" id="qrg-data" placeholder="https://tools.kodejarwo.com/"/>
-            <div>
-              <div>
+            <div class="grid-2">
+              <div class="grid-1">
                 <p>Width</p>
                 <input type="number" id="qrg-width" placeholder="300" />
               </div>
@@ -260,8 +260,28 @@
             </div>
             <p>Margin</p>
             <input type="number" id="qrg-margin" placeholder="0" />
+            <p>Background Color Type</p>
+            <select id="qrg-bgselector">
+              <option value="single" selected="">Single</option>
+              <option value="gradient">Gradient</option>
+            </select>
             <p>Background Color</p>
-            <input type="color" id="qrg-bgcolor" value="#ffffff" />
+            <div id="qrg-bgselected-single">
+              <input type="color" id="qrg-bgcolor" value="#ffffff" />
+            </div>
+            <div id="qrg-bgselected-gradientA" class="grid-2 hide">
+              <input type="color" id="qrg-bggradA" value="#18abea" />
+              <input type="color" id="qrg-bggradB" value="#ff5467" />
+            </div>
+            <div id="qrg-bgselected-gradientB" class="grid-1 hide">
+              <p>Background Gradient Type</p>
+              <select id="qrg-bggradT">
+                <option value="linear">Linear</option>
+                <option value="radial">Radial</option>
+              </select>
+              <p>Background Gradient Rotation</p>
+              <input id="qrg-bggradR" type="number" min="0" max="360" placeholder="0 - 360"/>
+            </div>
           </div>
         </div>
         <div id="qrg-opt-img">
@@ -272,16 +292,16 @@
             <!-- <p>Hide Background Dots</p>
             <input type="checkbox" id="qrg-imgbgdot" /> -->
             <p>Logo Size</p>
-            <input type="number" id="qrg-imgsize" min="0" max="1" step="0.1" value="0.4" />
+            <input type="number" id="qrg-imgsize" min="0.1" max="1" step="0.1" placeholder="0.1 - 1"/>
             <p>Logo Margin</p>
-            <input type="number" id="qrg-imgmargin" min="0" max="10000" value="0" />
+            <input type="number" id="qrg-imgmargin" min="0" max="10000" placeholder="0 - 10000"/>
           </div>
         </div>
         <div id="qrg-opt-qr">
           <h3>QR Options</h3>
           <div class="input-wrap">
             <p>Density</p>
-            <input type="number" id="qrg-qrdensity" placeholder="0 - 40" min="0" max="40" value="0"/>
+            <input type="number" id="qrg-qrdensity" placeholder="0 - 40" min="0" max="40"/>
             <p>Mode</p>
             <select id="qrg-qrmode">
               <option value="">None</option>
@@ -302,8 +322,6 @@
         <div id="qrg-opt-dots">
           <h3>Dots Options</h3>
           <div class="input-wrap">
-            <p>Dots Color</p>
-            <input type="color" id="qrg-dotscolor" value="#000000" />
             <p>Dots Type</p>
             <select id="qrg-dotstype">
               <option value="Rounded">Rounded</option>
@@ -313,32 +331,94 @@
               <option value="Square" selected="">Square</option>
               <option value="Extra-Rounded">Extra-Rounded</option>
             </select>
+            <p>Dots Color Type</p>
+            <select id="qrg-dotsselector">
+              <option value="single" selected="">Single</option>
+              <option value="gradient">Gradient</option>
+            </select>
+            <p>Dots Color</p>
+            <div id="qrg-dotsselected-single">
+              <input type="color" id="qrg-dotscolor" value="#000000" />
+            </div>
+            <div id="qrg-dotsselected-gradientA" class="grid-2 hide">
+              <input type="color" id="qrg-dotsgradA" value="#18abea" />
+              <input type="color" id="qrg-dotsgradB" value="#ff5467" />
+            </div>
+            <div id="qrg-dotsselected-gradientB" class="grid-1 hide">
+              <p>Dots Gradient Type</p>
+              <select id="qrg-dotsgradT">
+                <option value="linear">Linear</option>
+                <option value="radial">Radial</option>
+              </select>
+              <p>Dots Gradient Rotation</p>
+              <input id="qrg-dotsgradR" type="number" min="0" max="360" placeholder="0 - 360"/>
+            </div>
           </div>
         </div>
         <div id="qrg-opt-cs">
           <h3>Corner Square Options</h3>
           <div class="input-wrap">
-            <p>Color</p>
-            <input type="color" id="qrg-cscolor" value="#000000" />
-            <p>Type</p>
+            <p>Corner Square Type</p>
             <select id="qrg-cstype">
               <option value="Dots">Dots</option>
               <option value="Square" selected="">Square</option>
               <option value="Extra-Rounded">Extra-Rounded</option>
             </select>
+            <p>Corner Square Color Type</p>
+            <select id="qrg-csselector">
+              <option value="single" selected="">Single</option>
+              <option value="gradient">Gradient</option>
+            </select>
+            <p>Corner Square Color</p>
+            <div id="qrg-csselected-single">
+              <input type="color" id="qrg-cscolor" value="#000000" />
+            </div>
+            <div id="qrg-csselected-gradientA" class="grid-2 hide">
+              <input type="color" id="qrg-csgradA" value="#18abea" />
+              <input type="color" id="qrg-csgradB" value="#ff5467" />
+            </div>
+            <div id="qrg-csselected-gradientB" class="grid-1 hide">
+              <p>Corner Square Gradient Type</p>
+              <select id="qrg-csgradT">
+                <option value="linear">Linear</option>
+                <option value="radial">Radial</option>
+              </select>
+              <p>Corner Square Gradient Rotation</p>
+              <input id="qrg-csgradR" type="number" min="0" max="360" placeholder="0 - 360"/>
+            </div>
           </div>
         </div>
         <div id="qrg-opt-cd">
           <h3>Corner Dot Options</h3>
           <div class="input-wrap">
-            <p>Color</p>
-            <input type="color" id="qrg-cdcolor" value="#000000" />
-            <p>Type</p>
+            <p>Corner Dot Type</p>
             <select id="qrg-cdtype">
               <option value="Dots">Dots</option>
               <option value="Square" selected="">Square</option>
               <option value="Extra-Rounded">Extra-Rounded</option>
             </select>
+            <p>Corner Dot Color Type</p>
+            <select id="qrg-cdselector">
+              <option value="single" selected="">Single</option>
+              <option value="gradient">Gradient</option>
+            </select>
+            <p>Corner Dot Color</p>
+            <div id="qrg-cdselected-single">
+              <input type="color" id="qrg-cdcolor" value="#000000" />
+            </div>
+            <div id="qrg-cdselected-gradientA" class="grid-2 hide">
+              <input type="color" id="qrg-cdgradA" value="#18abea" />
+              <input type="color" id="qrg-cdgradB" value="#ff5467" />
+            </div>
+            <div id="qrg-cdselected-gradientB" class="grid-1 hide">
+              <p>Corner Dot Gradient Type</p>
+              <select id="qrg-cdgradT">
+                <option value="linear">Linear</option>
+                <option value="radial">Radial</option>
+              </select>
+              <p>Corner Dot Gradient Rotation</p>
+              <input id="qrg-cdgradR" type="number" min="0" max="360" placeholder="0 - 360"/>
+            </div>
           </div>
         </div>
       </div>

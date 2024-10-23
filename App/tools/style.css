@@ -177,7 +177,7 @@ summary {
 template,
 [hidden],
 .hide {
-	display: none;
+	display: none !important;
 }
 
 a {
@@ -1158,7 +1158,7 @@ main [data-status]:after {
 
 #qr-generator .input .input-wrap {
 	display: grid;
-	gap: 0.5rem;
+	gap: 0.75rem;
 }
 
 #qr-generator input,
@@ -1206,20 +1206,20 @@ main [data-status]:after {
 	border-right: 1rem solid #1c1e23;
 }
 
-#qr-generator .input .input-wrap > div {
+#qr-generator .input .input-wrap .grid-2 {
 	display: grid;
-	gap: 0.5rem;
+	gap: 0.75rem;
 	grid-template-columns: 1fr 1fr;
 }
 
-#qr-generator .input .input-wrap > div > div {
+#qr-generator .input .input-wrap .grid-1 {
 	display: grid;
-	gap: 0.5rem;
+	gap: 0.75rem;
 }
 
 #qr-generator .output .qrg-downset {
 	display: grid;
-	grid-template-columns: 2fr 1.5fr;
+	grid-template-columns: 2fr 1.2fr;
 	gap: 1rem;
 }
 
