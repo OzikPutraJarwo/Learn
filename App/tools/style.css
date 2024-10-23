@@ -1130,7 +1130,8 @@ main [data-status]:after {
 	gap: 2rem;
 }
 
-#qr-generator .input, #qr-generator .output .output-wrap {
+#qr-generator .input,
+#qr-generator .output .output-wrap {
 	display: flex;
 	flex-direction: column;
 	gap: 1rem;
@@ -1138,7 +1139,8 @@ main [data-status]:after {
 	top: 2rem;
 }
 
-#qr-generator .input > div, #qr-generator .output > div > div {
+#qr-generator .input>div,
+#qr-generator .output>div>div {
 	padding: 1.5rem;
 	background: #2a2d32;
 	border-radius: .8rem;
@@ -1159,7 +1161,8 @@ main [data-status]:after {
 	gap: 0.5rem;
 }
 
-#qr-generator input, #qr-generator select {
+#qr-generator input,
+#qr-generator select {
 	background: #1c1e23;
 	outline: none;
 	border: none;
@@ -1181,18 +1184,37 @@ main [data-status]:after {
 
 #qr-generator input[type="color"] {
 	height: 3rem;
-	cursor: pointer
+	cursor: pointer;
+	outline: none;
+	padding: 0;
+	background: none;
+}
+
+#qr-generator input[type="color"]::-webkit-color-swatch {
+	border: none;
+	border-radius: .5rem;
 }
 
 #qr-generator input[type="checkbox"] {
-			width: 15px;
-			height: 15px;
-			cursor: pointer;
+	width: 15px;
+	height: 15px;
+	cursor: pointer;
 }
 
 #qr-generator select {
 	cursor: pointer;
 	border-right: 1rem solid #1c1e23;
+}
+
+#qr-generator .input .input-wrap > div {
+	display: grid;
+	gap: 0.5rem;
+	grid-template-columns: 1fr 1fr;
+}
+
+#qr-generator .input .input-wrap > div > div {
+	display: grid;
+	gap: 0.5rem;
 }
 
 #qr-generator .output .qrg-downset {

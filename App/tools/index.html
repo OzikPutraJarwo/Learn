@@ -244,12 +244,33 @@
           <div class="input-wrap">
             <p>Link or Text Data</p>
             <input type="text" id="qrg-data" placeholder="https://www.kodejarwo.com/">
-            <p>Width</p>
-            <input type="number" id="qrg-width" placeholder="300" />
-            <p>Height</p>
-            <input type="number" id="qrg-height" placeholder="300" />
+            <div>
+              <div>
+                <p>Width</p>
+                <input type="number" id="qrg-width" placeholder="300" />
+              </div>
+              <div>
+                <p>Height</p>
+                <input type="number" id="qrg-height" placeholder="300" />
+              </div>
+            </div>
             <p>Margin</p>
             <input type="number" id="qrg-margin" placeholder="0" />
+            <p>Background Color</p>
+            <input type="color" id="qrg-bgcolor" value="#ffffff" />
+          </div>
+        </div>
+        <div id="qrg-opt-img">
+          <h3>Image Logo Options</h3>
+          <div class="input-wrap">
+            <p>Upload Logo</p>
+            <input type="file" id="qrg-image" placeholder="Logo" accept="image/png, image/jpeg, image/gif, image/webp, image/svg+xml, image/x-icon, image/bmp, image/tiff, image/heic, image/avif" />
+            <!-- <p>Hide Background Dots</p>
+            <input type="checkbox" id="qrg-imgbgdot" /> -->
+            <p>Logo Size</p>
+            <input type="number" id="qrg-imgsize" min="0" max="1" step="0.1" value="0.4" />
+            <p>Logo Margin</p>
+            <input type="number" id="qrg-imgmargin" min="0" max="10000" value="0" />
           </div>
         </div>
         <div id="qrg-opt-qr">
@@ -274,19 +295,6 @@
             </select>
           </div>
         </div>
-        <div id="qrg-opt-img">
-          <h3>Image Logo Options</h3>
-          <div class="input-wrap">
-            <p>Upload Logo</p>
-            <input type="file" id="qrg-image" placeholder="Logo" />
-            <!-- <p>Hide Background Dots</p>
-            <input type="checkbox" id="qrg-imgbgdot" /> -->
-            <p>Logo Size</p>
-            <input type="number" id="qrg-imgsize" min="0" max="1" step="0.1" value="0.4" />
-            <p>Logo Margin</p>
-            <input type="number" id="qrg-imgmargin" min="0" max="10000" value="0" />
-          </div>
-        </div>
         <div id="qrg-opt-dots">
           <h3>Dots Options</h3>
           <div class="input-wrap">
@@ -301,13 +309,6 @@
               <option value="Square" selected="">Square</option>
               <option value="Extra-Rounded">Extra-Rounded</option>
             </select>
-          </div>
-        </div>
-        <div id="qrg-opt-bg">
-          <h3>Background Options</h3>
-          <div class="input-wrap">
-            <p>Background Color</p>
-            <input type="color" id="qrg-bgcolor" value="#ffffff" />
           </div>
         </div>
         <div id="qrg-opt-cs">
