@@ -5,6 +5,7 @@ const filesToMerge = [
     'script.js',
     'bfr.js',
     'pdc.js',
+    'qrg.js',
     'dta.js'
 ];
 
@@ -17,7 +18,7 @@ function mergeFiles(files, output) {
         const filePath = path.resolve(__dirname, file);
         if (fs.existsSync(filePath)) {
             const data = fs.readFileSync(filePath, 'utf8');
-            writeStream.write(data + '\n'); 
+            writeStream.write(data + '\n\n'); 
         } else {
             console.error(`File tidak ditemukan: ${file}`);
         }

@@ -1,3 +1,5 @@
+// QR Code Generator
+
 const qrginputs = document.querySelectorAll("#qrg-width,#qrg-height,#qrg-data,#qrg-margin,#qrg-qrdensity,#qrg-qrmode,#qrg-qrerror,#qrg-imgbgdot,#qrg-imgsize,#qrg-imgmargin,#qrg-dotscolor,#qrg-dotstype,#qrg-bgcolor,#qrg-cscolor,#qrg-cstype,#qrg-cdcolor,#qrg-cdtype");
 const qrgvalues = {};
 
