@@ -41,7 +41,7 @@ function generateQR() {
     width: qrgvalues['qrg-width'] || 300,
     height: qrgvalues['qrg-height'] || 300,
     type: "svg",
-    data: qrgvalues['qrg-data'] || "https://www.kodejarwo.com/",
+    data: qrgvalues['qrg-data'] || "https://tools.kodejarwo.com/",
     image: qrgImageFix || "",
     margin: qrgvalues['qrg-margin'] || 0,
     qrOptions: {
