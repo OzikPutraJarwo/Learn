@@ -256,6 +256,17 @@ td {
 	background: #1c1e23;
 }
 
+.grid-2 {
+	display: grid;
+	gap: 0.75rem;
+	grid-template-columns: 1fr 1fr;
+}
+
+.grid-1 {
+	display: grid;
+	gap: 0.75rem;
+}
+
 /* =================== HEADER =================== */
 
 header {
@@ -375,6 +386,10 @@ main [data-status]:after {
 	display: block;
 	border-radius: 0.5rem;
 	background: #2a2d32;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 
 .input-files label:hover,
@@ -396,7 +411,7 @@ main [data-status]:after {
 .input-files label div {
 	width: 3rem;
 	height: 3rem;
-	margin: auto;
+	margin: 0 auto;
 	background: #ff5467;
 	border-radius: 100%;
 	padding: 0.3rem;
@@ -535,6 +550,12 @@ main [data-status]:after {
 	background: #009c721f;
 }
 
+#home .menu .item.image-watermark .logo {
+	fill: none;
+	stroke: #009c72;
+	background: #009c721f;
+}
+
 #home .menu .item.qr-generator .logo {
 	fill: #b1b4b9;
 	background: #b1b4b91f;
@@ -568,6 +589,10 @@ main [data-status]:after {
 }
 
 #home .menu .item.image-compressor:hover {
+	background: #009c721f;
+}
+
+#home .menu .item.image-watermark:hover {
 	background: #009c721f;
 }
 
@@ -1077,11 +1102,14 @@ main [data-status]:after {
 	margin-top: 1rem;
 }
 
-#doi-to-apa .output #dta-list .dta-citation {
+#doi-to-apa .output #dta-list > div {
 	display: list-item;
 	list-style: decimal;
 	padding: .5rem 0 .5rem 1rem;
 	margin-left: 1rem;
+}
+
+#doi-to-apa .output #dta-list .dta-citation {
 	cursor: pointer;
 	transition: .2s all;
 }
@@ -1093,7 +1121,7 @@ main [data-status]:after {
 #doi-to-apa .output #dta-list .dta-info {
 	display: none;
 	padding: 1rem;
-	margin: 1rem 0 1rem 2rem;
+	margin: 1rem 0;
 	background: #404348;
 	border-radius: .5rem;
 	font-size: .9rem;
@@ -1206,17 +1234,6 @@ main [data-status]:after {
 	border-right: 1rem solid #1c1e23;
 }
 
-#qr-generator .input .input-wrap .grid-2 {
-	display: grid;
-	gap: 0.75rem;
-	grid-template-columns: 1fr 1fr;
-}
-
-#qr-generator .input .input-wrap .grid-1 {
-	display: grid;
-	gap: 0.75rem;
-}
-
 #qr-generator .output .qrg-downset {
 	display: grid;
 	grid-template-columns: 2fr 1.2fr;
@@ -1229,4 +1246,86 @@ main [data-status]:after {
 
 #qr-generator .output #qrg-canvas {
 	overflow: auto;
+}
+
+/* =================== IMAGE WATERMARK =================== */
+
+#image-watermark.active, #image-watermark .wrap, #image-watermark .input, #image-watermark .output {
+	display: grid;
+	gap: 2rem;
+}
+
+#image-watermark .input {
+	grid-template-columns: 1fr;
+}
+
+#image-watermark .input-options {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: 1rem;
+}
+
+#image-watermark .input-options > div {
+	padding: 1.5rem;
+	background: #2a2d32;
+	border-radius: .8rem;
+	display: flex;
+	gap: 1rem;
+	flex-direction: column;
+	position: relative;
+}
+
+#image-watermark input, #image-watermark select {
+	background: #1c1e23;
+	outline: none;
+	border: none;
+	padding: 0.7rem 1rem;
+	border-radius: 0.7rem;
+	color: #d3d3d3;
+	width: 100%;
+}
+
+#image-watermark input[type="color"] {
+height: 3rem;
+cursor: pointer;
+outline: none;
+padding: 0;
+background: none;
+}
+
+#image-watermark input[type="color"]::-webkit-color-swatch {
+border: none;
+border-radius: .5rem;
+}
+
+#image-watermark input[type="checkbox"] {
+width: 15px;
+height: 15px;
+cursor: pointer;
+}
+
+#image-watermark select {
+cursor: pointer;
+border-right: 1rem solid #1c1e23;
+}
+
+#image-watermark .output {
+	position: relative;
+}
+
+#image-watermark #iwm-image {
+	overflow: auto;
+	max-height: 400px;
+}
+
+#image-watermark #iwm-download {
+	text-align: center;
+}
+
+#image-watermark #iwm-image canvas {
+cursor: grab;
+}
+
+.c-grabbing #image-watermark #iwm-image canvas {
+	cursor: grabbing;
 }
