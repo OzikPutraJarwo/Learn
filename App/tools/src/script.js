@@ -149,3 +149,9 @@ qrgInputs.forEach(input => {
     generateQR();
   });
 });
+
+const icvFileInput = document.getElementById('icv-input-files');
+let icvFiles;
+icvFileInput.addEventListener('change', () => {
+  icvFiles = icvFileInput.files;
+});
