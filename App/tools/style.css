@@ -320,12 +320,16 @@ nav .item .icon svg {
 	transition: .2s all;
 }
 
-nav .item:not(.stroke) .icon svg {
+nav .item:not(.stroke, .strokein) .icon svg {
 	fill: #929292;
 }
 
 nav .item.stroke .icon svg {
 	stroke: #929292
+}
+
+nav .item.fillin .icon svg * {
+	fill: #929292
 }
 
 nav .item:hover,
@@ -343,6 +347,11 @@ nav .item.active:not(.stroke) svg {
 nav .item:hover.stroke svg,
 nav .item.active.stroke svg {
 	stroke: #ff5467;
+}
+
+nav .item:hover.fillin svg *,
+nav .item.active.fillin svg * {
+	fill: #ff5467;
 }
 
 /* =================== MAIN =================== */
