@@ -7,9 +7,9 @@
 ## Next Features:
 - [x] bulk file renamer
 - [ ] file analyzer
-- [ ] image compressor
-- [ ] image converter
-- [ ] image watermark
+- [x] image compressor
+- [x] image converter
+- [x] image watermark
 - [ ] currency converter
 - [ ] unit converter
 - [x] QR code generator
@@ -19,6 +19,9 @@
 ## Next Update:
 - DOI to APA
   - more reference style
+- Image compressor
+  - multiple image
+  - image zoom on hover
   
 <br>
 <br>

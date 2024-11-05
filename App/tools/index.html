@@ -223,7 +223,7 @@
               <div class="title">Image Converter</div>
               <div class="desc">Convert image format to PNG, JPG, WebP, and more</div>
             </div>
-            <div class="item image-compressor" data-status="Maintenance">
+            <div class="item image-compressor">
               <div class="logo"><svg class="stroke" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M5 5L9 9M9 9V5M9 9H5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                   <path d="M19 5L15 9M15 9L19 9M15 9L15 5" stroke-width="2" stroke-linecap="round"
@@ -234,7 +234,7 @@
                     stroke-linejoin="round" />
                 </svg></div>
               <div class="title">Image Compressor</div>
-              <div class="desc">Customized image size and dimension compressor</div>
+              <div class="desc">Resize image and size compressor for WebP and JPG</div>
             </div>
             <div class="item image-watermark">
               <div class="logo"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -432,7 +432,59 @@
       </section>
 
       <section id="image-compressor">
-        <p>Maintenance</p>
+        <h2>Image Compressor (WebP and JPG)</h2>
+        <div class="wrap">
+          <div class="input">
+            <div class="input-files">
+              <label for="icm-input-files">
+                <p>Add files</p>
+                <span>Click or drop files here to add</span>
+                <div>
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M11 17C11 17.5523 11.4477 18 12 18C12.5523 18 13 17.5523 13 17V13H17C17.5523 13 18 12.5523 18 12C18 11.4477 17.5523 11 17 11H13V7C13 6.44771 12.5523 6 12 6C11.4477 6 11 6.44771 11 7V11H7C6.44772 11 6 11.4477 6 12C6 12.5523 6.44772 13 7 13H11V17Z" />
+                  </svg>
+                </div>
+                <input type="file" id="icm-input-files" hidden=""
+                  accept="image/png, image/jpeg, image/gif, image/webp, image/svg+xml, image/x-icon, image/bmp, image/tiff, image/heic, image/avif" />
+              </label>
+            </div>
+            <div class="input-options">
+              <div class="input-width">
+                <p>Width (%)</p>
+                <input type="number" id="icmWidth" value="100" min="1" max="100"/>
+              </div>
+              <div class="input-height">
+                <p>Height (%)</p>
+                <input type="number" id="icmHeight" value="100" min="1" max="100"/>
+              </div>
+              <div class="input-quality">
+                <p>Quality (0 - 1)</p>
+                <input type="number" id="icmQuality" step="0.1" min="0.1" max="1" value="0.8"/>
+              </div>
+            </div>
+            <div class="input-actions">
+              <button id="icmResizeBtn" class="btn">Compress & Change</button>
+              <a id="icmDownload" class="btn" style="display:none;">Download</a>
+            </div>
+          </div>
+          <div class="output">
+            <div id="icmPreview">
+              <div class="icm-image-container original" style="display: none;">
+                  <h3>Original:</h3>
+                  <img id="icmOriginalImage" alt="Original">
+                  <div class="icm-info" id="icmOriginalInfo"></div>
+                  <div class="icm-info" id="icmOriginalFileSize"></div>
+              </div>
+              <div class="icm-image-container results" style="display: none;">
+                  <h3>Results:</h3>
+                  <img id="icmResultImage" alt="Results">
+                  <div class="icm-info" id="icmResultInfo"></div>
+                  <div class="icm-info" id="icmResultFileSize"></div>
+              </div>
+          </div>
+          </div>
+        </div>
       </section>
 
       <section id="image-watermark">

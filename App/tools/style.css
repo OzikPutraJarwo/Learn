@@ -250,6 +250,7 @@ td {
 	border-radius: 0.7rem;
 	cursor: pointer;
 	width: 100%;
+	text-align: center;
 }
 
 .btn:hover {
@@ -1455,4 +1456,63 @@ cursor: grab;
 #image-converter #icv-summary-container > div {
 	display: grid;
 	grid-template-columns: 160px 1fr;
+}
+
+/* =================== IMAGE COMPRESSOR =================== */
+
+#image-compressor.active {
+	display: grid;
+	gap: 2rem;
+}
+
+#image-compressor .input {
+	display: grid;
+	gap: 2rem;
+}
+
+#image-compressor .input-options {
+	display: grid;
+	gap: 1rem;
+	grid-template-columns: 1fr 1fr 1fr;
+}
+
+#image-compressor .input-options > div {
+	padding: 1.5rem;
+	background: #2a2d32;
+	border-radius: .8rem;
+	display: flex;
+	gap: 1rem;
+	flex-direction: column;
+	position: relative;
+}
+
+#image-compressor input {
+	background: #1c1e23;
+	outline: none;
+	border: none;
+	padding: 0.7rem 1rem;
+	border-radius: 0.7rem;
+	color: #d3d3d3;
+	width: 100%;
+}
+
+#image-compressor .input-actions {
+	display: flex;
+	gap: 2rem;
+}
+
+#image-compressor .wrap {
+	display: grid;
+	gap: 2rem;
+}
+
+#image-compressor #icmPreview {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 2rem;
+}
+
+#image-compressor #icmPreview img {
+	width: 100%;
+	margin: 1rem 0;
 }

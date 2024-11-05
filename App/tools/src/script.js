@@ -155,3 +155,30 @@ let icvFiles;
 icvFileInput.addEventListener('change', () => {
   icvFiles = icvFileInput.files;
 });
+
+const icmUpload = document.getElementById('icm-input-files');
+const icmOriginal = document.querySelector('.icm-image-container.original');
+const icmOriginalImage = document.getElementById('icmOriginalImage');
+const icmOriginalInfo = document.getElementById('icmOriginalInfo');
+const icmOriginalFileSize = document.getElementById('icmOriginalFileSize');
+let icmOriginalImg = null;
+let icmOriginalFileType = null;
+icmUpload.addEventListener('change', (event) => {
+		const file = event.target.files[0];
+		icmOriginalFileType = file.type;
+		const reader = new FileReader();
+		reader.onload = (e) => {
+				const img = new Image();
+				img.onload = () => {
+						icmOriginalImg = img;
+						icmOriginal.style.display = 'block';
+						icmOriginalImage.src = e.target.result;
+						icmOriginalInfo.innerText = `Dimensions: ${img.width} x ${img.height} px`;
+						icmOriginalInfo.style.display = 'block';
+						icmOriginalFileSize.innerText = `File size: ${(file.size / 1024).toFixed(2)} KB`;
+						icmOriginalFileSize.style.display = 'block';
+				};
+				img.src = e.target.result;
+		};
+		reader.readAsDataURL(file);
+});
