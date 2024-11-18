@@ -3,10 +3,10 @@ library(dplyr)
 library(factoextra)
 library(readxl)
 
-Data_path_new <- read_excel("C:/Users/HP/Downloads/Data Path - Ulat Grayak.xlsx", 
-  col_types = c("text", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric"))
+Data_path_new <- read_excel("C:/Users/HP/Documents/Github/Learn/R/assets/Data Dendrogram.xlsx", 
+  col_types = c("text", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric"))
 
-Data_z <- scale(x = Data_path_new [ ,2:11])
+Data_z <- scale(x = Data_path_new [ ,2:17])
 Data_dist <- dist(x = Data_z, method = "euclidean")
 Data_A <- hclust(d = Data_dist, method = "average")
 Dendogram <-fviz_dend(Data_A, cex = 0.5, main = "Cluster Dendrogram Average Linkage")
