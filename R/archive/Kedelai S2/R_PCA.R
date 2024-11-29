@@ -26,6 +26,3 @@ plot(mod,
      size.text.env = 4,
      repel = TRUE
      )
-
-
-str(Data)

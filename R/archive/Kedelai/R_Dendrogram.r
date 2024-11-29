@@ -3,7 +3,7 @@ library(dplyr)
 library(factoextra)
 library(readxl)
 
-Data_path_new <- read_excel("./Kedelai/Data Total Lengkap.xlsx", 
+Data_path_new <- read_excel("./R/archive/Kedelai/Data Total Lengkap.xlsx", 
   col_types = c("text", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric"))
 
 Data_z <- scale(x = Data_path_new [ ,2:20])
