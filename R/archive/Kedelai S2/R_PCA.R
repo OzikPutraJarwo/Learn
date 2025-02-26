@@ -1,7 +1,7 @@
 library(readxl)
 library(metan)
 
-Data <- read_excel("E:/Blog/Learn/R/archive/Kedelai S2/Data Total Lengkap.xlsx", 
+Data <- read_excel("R/archive/Kedelai S2/Data Total Lengkap.xlsx", 
   col_types = c("text", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric"))
 
 mod<-gtb(Data, Genotipe)
@@ -26,6 +26,3 @@ plot(mod,
      size.text.env = 4,
      repel = TRUE
      )
-
-
-str(Data)

@@ -1,7 +1,8 @@
 library(readxl)
 library(metan)
 
-Data <- read_excel("./Kedelai/Data Total Lengkap.xlsx", 
+Data <- read_excel("E:/Blog/Learn/R/archive/Kedelai/Data Total Lengkap.xlsx",
+	sheet = "Sheet2",
   col_types = c("text", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric"))
 
 mod<-gtb(Data, Genotipe)

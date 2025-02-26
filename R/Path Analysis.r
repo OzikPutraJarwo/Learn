@@ -6,7 +6,7 @@ library(semPlot)
 # Mengambil excel
 
 Excel_Data_Total <- read_excel(
-  "./assets/Data Total.xlsx", 
+  "R/assets/Data Total.xlsx", 
   col_types = c(
     "text", "text","numeric", 
     "numeric", "numeric", "numeric", 

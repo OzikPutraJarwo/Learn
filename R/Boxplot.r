@@ -4,16 +4,16 @@ library(ggplot2)
 library(tidyr)
 
 # File path
-file_path <- "./assets/Data Boxplot.xlsx"
+file_path <- "archive/Kedelai/Data Boxplot Lengkap.xlsx"
 
 # Sheet details
 sheets <- list(
-  list(Sheet = "PP", xTitle = "Galur", yTitle = "Panjang Polong (mm)"),
-  list(Sheet = "LP", xTitle = "Galur", yTitle = "Lebar Polong (mm)"),
-  list(Sheet = "TP", xTitle = "Galur", yTitle = "Tebal Polong (mm)"),
-  list(Sheet = "PB", xTitle = "Galur", yTitle = "Panjang Biji (mm)"),
-  list(Sheet = "LB", xTitle = "Galur", yTitle = "Lebar Biji (mm)"),
-  list(Sheet = "TB", xTitle = "Galur", yTitle = "Tebal Biji (mm)")
+  list(Sheet = "PP", xTitle = "Genotypes", yTitle = "Pod Length (mm)"),
+  list(Sheet = "LP", xTitle = "Genotypes", yTitle = "Pod Width (mm)"),
+  list(Sheet = "TP", xTitle = "Genotypes", yTitle = "Pod Thickness (mm)"),
+  list(Sheet = "PB", xTitle = "Genotypes", yTitle = "Seed Length (mm)"),
+  list(Sheet = "LB", xTitle = "Genotypes", yTitle = "Seed Width (mm)"),
+  list(Sheet = "TB", xTitle = "Genotypes", yTitle = "Seed Thickness (mm)")
 )
 
 # Process
