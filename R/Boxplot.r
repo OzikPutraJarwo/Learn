@@ -14,6 +14,12 @@ sheets <- list(
   list(Sheet = "PB", xTitle = "Genotypes", yTitle = "Seed Length (mm)"),
   list(Sheet = "LB", xTitle = "Genotypes", yTitle = "Seed Width (mm)"),
   list(Sheet = "TB", xTitle = "Genotypes", yTitle = "Seed Thickness (mm)")
+  list(Sheet = "PP", xTitle = "Genotypes", yTitle = "Pod Length (mm)"),
+  list(Sheet = "LP", xTitle = "Genotypes", yTitle = "Pod Width (mm)"),
+  list(Sheet = "TP", xTitle = "Genotypes", yTitle = "Pod Thickness (mm)"),
+  list(Sheet = "PB", xTitle = "Genotypes", yTitle = "Seed Length (mm)"),
+  list(Sheet = "LB", xTitle = "Genotypes", yTitle = "Seed Width (mm)"),
+  list(Sheet = "TB", xTitle = "Genotypes", yTitle = "Seed Thickness (mm)")
 )
 
 # Process
@@ -61,7 +67,8 @@ process_and_plot <- function(sheet, xTitle, yTitle) {
     # Theme
     theme_linedraw() + 
     # Legends
-    theme(legend.position = "none")
+    theme(legend.position = "none",
+        axis.text.x = element_text(angle = 90, hjust = 1))
 }
 
 # Loop
