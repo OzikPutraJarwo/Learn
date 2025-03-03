@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prakiraan Cuaca BMKG</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .cuaca-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .cuaca-item {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin: 10px;
+            border-radius: 8px;
+            width: 200px;
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+        img {
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Prakiraan Cuaca BMKG</h1>
+    <div id="lokasi"></div>
+    <div class="cuaca-container" id="cuaca"></div>
+
+    <script>
+        async function fetchWeatherData(kodeWilayah) {
+            const url = `https://api.bmkg.go.id/publik/prakiraan-cuaca?adm4=${kodeWilayah}`;
+            
+            try {
+                const response = await fetch(url);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+
+                const data = await response.json();
+                return data;
+            } catch (error) {
+                console.error("Error fetching data:", error);
+                return null;
+            }
+        }
+
+        async function displayWeather(kodeWilayah) {
+            const data = await fetchWeatherData(kodeWilayah);
+            if (!data) return;
+
+            const lokasi = data.lokasi;
+            const cuacaList = data.data[0]?.cuaca || [];
+
+            // Tampilkan lokasi
+            document.getElementById("lokasi").innerHTML = `
+                <h2>Cuaca di ${lokasi.desa}, ${lokasi.kecamatan}, ${lokasi.kotkab}, ${lokasi.provinsi}</h2>
+            `;
+
+            // Tampilkan prakiraan cuaca
+            document.getElementById("cuaca").innerHTML = cuacaList.flat().map(item => `
+                <div class="cuaca-item">
+                    <p><strong>${new Date(item.local_datetime).toLocaleString("id-ID")}</strong></p>
+                    <p>🌡️ Suhu: ${item.t}°C</p>
+                    <p>💨 Angin: ${item.ws} km/j (${item.wd})</p>
+                    <p>☁️ Cuaca: ${item.weather_desc}</p>
+                    <img src="${item.image}" alt="${item.weather_desc}">
+                </div>
+            `).join('');
+        }
+
+        // Jalankan fungsi dengan kode wilayah yang diinginkan
+        displayWeather("35.07.18.2014"); // Kode wilayah untuk Bunutwetan, Pakis, Malang, Jawa Timur
+    </script>
+
+</body>
+</html>
