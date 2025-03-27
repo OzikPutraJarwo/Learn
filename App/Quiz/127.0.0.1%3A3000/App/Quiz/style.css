@@ -143,18 +143,14 @@ button:hover {
 
 .notification {
   position: fixed;
-  bottom: 1rem;
+  top: 20px;
   left: 50%;
   transform: translateX(-50%);
   padding: 15px 30px;
   border-radius: 5px;
   font-size: 1.2em;
   z-index: 1000;
-  transition: .5s all;
-}
-
-.notification.hide {
-  bottom: -100%;
+  animation: fadeInOut 3s ease-in-out;
 }
 
 .notification.correct {
@@ -163,6 +159,13 @@ button:hover {
 
 .notification.wrong {
   background: #ff4444;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; top: 0; }
+  10% { opacity: 1; top: 20px; }
+  90% { opacity: 1; top: 20px; }
+  100% { opacity: 0; top: 0; }
 }
 
 /* Tambahkan media query dan style baru */
@@ -203,5 +206,25 @@ button:hover {
   .mode-select {
       flex-direction: column;
       gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+      padding: 10px;
+  }
+  
+  button {
+      padding: 8px 15px;
+      margin: 5px;
+  }
+  
+  #question-text {
+      font-size: 1em;
+  }
+  
+  #answer-input {
+      width: 95%;
+      font-size: 1em;
   }
 }
