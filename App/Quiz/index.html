@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Quiz Interaktif</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div id="start-screen" class="screen">
+            <h1>Selamat Datang di Quiz!</h1>
+            <div class="mode-select">
+                <label><input type="radio" name="mode" value="normal" checked> Mode Normal</label>
+                <label><input type="radio" name="mode" value="reversed"> Mode Terbalik</label>
+            </div>
+            <select id="category-select"></select>
+            <button id="start-btn">Mulai Quiz!</button>
+        </div>
+
+        <div id="quiz-screen" class="screen hidden">
+            <div class="quiz-container">
+                <div class="question-list">
+                    <!-- Daftar nomor pertanyaan akan diisi JS -->
+                </div>
+                <div class="question-area">
+                    <h2 id="question-text"></h2>
+                    <input type="text" id="answer-input" placeholder="Masukkan jawaban...">
+                    <div class="controls">
+                        <button id="prev-btn">Sebelumnya</button>
+                        <button id="submit-btn">Submit</button>
+                        <button id="next-btn">Berikutnya</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="score-screen" class="screen hidden">
+            <h1>Hasil Quiz!</h1>
+            <div id="score-result"></div>
+            <button id="restart-btn">Main Lagi</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

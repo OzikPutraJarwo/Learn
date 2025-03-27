@@ -1,0 +1,12 @@
+{
+  "Sejarah": [
+    {"q": "Siapakah proklamator Indonesia?", "a": "Soekarno dan Hatta"},
+    {"q": "Tahun berapa Indonesia merdeka?", "a": "1945"},
+    {"q": "Ibukota pertama Indonesia setelah merdeka?", "a": "Jakarta"}
+  ],
+  "Sains": [
+    {"q": "Satuan gaya dalam SI?", "a": "Newton"},
+    {"q": "Planet terdekat dari matahari?", "a": "Merkurius"},
+    {"q": "Lambang kimia untuk emas?", "a": "Au"}
+  ]
+}
