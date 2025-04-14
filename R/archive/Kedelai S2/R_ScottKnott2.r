@@ -1,4 +1,3 @@
-library(agricolae)
 library(ScottKnott)
 
 data <- data.frame(

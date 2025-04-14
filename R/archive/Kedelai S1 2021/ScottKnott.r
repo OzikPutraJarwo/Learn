@@ -30,7 +30,7 @@
 ####################
 
 
-library(AgroR)
+# library(AgroR)
 
 #=============================
 # Example laranja
