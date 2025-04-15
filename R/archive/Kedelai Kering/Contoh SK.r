@@ -1,3 +1,5 @@
+# install.packages("ScottKnott")
+
 library(ScottKnott)
 
 data <- data.frame(
