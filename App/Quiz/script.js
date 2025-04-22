@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const categorySelect = document.getElementById('category-select');
     const response = await fetch('questions.json');
     questions = await response.json();
+    document.addEventListener('keydown', handleKeyPress);
     
     // Load categories
     for(const category in questions) {
@@ -122,6 +123,22 @@ function navigate(direction) {
     showQuestion();
 }
 
+function handleKeyPress(e) {
+    // Hanya tangani jika berada di layar quiz
+    if (document.getElementById('quiz-screen').classList.contains('hidden')) {
+        return;
+    }
+
+        switch(e.key) {
+            case 'ArrowLeft':
+                navigate(-1);
+                break;
+        case 'ArrowRight':
+            navigate(1);
+            break;
+    }
+}
+
 function jumpToQuestion(index) {
     currentQuestionIndex = index;
     showQuestion();
@@ -136,7 +153,14 @@ function submitAnswer() {
     const userAnswer = document.getElementById('answer-input').value.trim().toLowerCase();
     const correctAnswer = currentQuestions[currentQuestionIndex].a.toLowerCase();
     
-    const isCorrect = userAnswer === correctAnswer;
+    // Fungsi untuk menghapus semua simbol dari string
+    const removeSymbols = (str) => str.replace(/[^a-zA-Z0-9]/g, '');
+    
+    // Bandingkan jawaban setelah menghapus simbol
+    const normalizedUserAnswer = removeSymbols(userAnswer);
+    const normalizedCorrectAnswer = removeSymbols(correctAnswer);
+    
+    const isCorrect = normalizedUserAnswer === normalizedCorrectAnswer;
     
     // Show notification
     const notification = document.getElementById('notification');
