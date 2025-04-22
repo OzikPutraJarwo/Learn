@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -17,5 +17,129 @@
     </aside>
 
     <script src="anim.js"></script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Psychrometric Chart Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    #chart {
+      position: relative;
+      display: inline-block;
+      border: 1px solid #ccc;
+      cursor: crosshair;
+    }
+    #marker {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: red;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      display: none;
+    }
+    #output {
+      margin-top: 20px;
+    }
+    .param {
+      margin: 4px 0;
+    }
+  </style>
+</head>
+<body>
+
+<h2>Psychrometric Chart Calculator</h2>
+<div id="chart">
+  <img id="chartImage" src="image.png" alt="Psychrometric Chart">
+  <div id="marker"></div>
+</div>
+
+<div id="output">
+  <h3>Hasil Klik:</h3>
+  <div class="param">🌡️ Suhu Kering (Dry Bulb): <span id="dryBulb">-</span> °C</div>
+  <div class="param">💧 Humidity Ratio (W): <span id="humidityRatio">-</span> kg/kg</div>
+  <div class="param">🔥 Entalpi (h): <span id="enthalpy">-</span> kJ/kg</div>
+  <div class="param">🌫️ RH (Kelembaban Relatif): <span id="rh">-</span> %</div>
+  <div class="param">🧊 Suhu Titik Embun (Dew Point): <span id="dewPoint">-</span> °C</div>
+  <div class="param">💨 Suhu Basah (Wet Bulb): <span id="wetBulb">-</span> °C</div>
+  <div class="param">💨 Tekanan Uap Air: <span id="vp">-</span> kPa</div>
+  <div class="param">📦 Volume Spesifik: <span id="vSpec">-</span> m³/kg d.a.</div>
+</div>
+
+<script>
+  const chart = document.getElementById('chartImage');
+  const marker = document.getElementById('marker');
+
+  const elements = {
+    dryBulb: document.getElementById('dryBulb'),
+    humidityRatio: document.getElementById('humidityRatio'),
+    enthalpy: document.getElementById('enthalpy'),
+    rh: document.getElementById('rh'),
+    dewPoint: document.getElementById('dewPoint'),
+    wetBulb: document.getElementById('wetBulb'),
+    vp: document.getElementById('vp'),
+    vSpec: document.getElementById('vSpec'),
+  };
+
+  chart.addEventListener('click', function(e) {
+    const rect = chart.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    const width = chart.width;
+    const height = chart.height;
+
+    // === Scaling chart coordinates to values ===
+    const dryBulb = -10 + (x / width) * 60;  // -10°C to 50°C
+    const humidityRatio = (1 - (y / height)) * 0.030; // 0 - 0.030 kg/kg
+
+    // === Psychrometric calculations ===
+    const h = 1.006 * dryBulb + humidityRatio * (2501 + 1.86 * dryBulb);
+    const p_atm = 101.325; // kPa
+
+    // Saturation pressure (Tdb in Celsius) - Tetens formula approximation
+    const pws = 0.61078 * Math.exp((17.27 * dryBulb) / (dryBulb + 237.3)); // in kPa
+    const pv = (humidityRatio * p_atm) / (0.622 + humidityRatio); // partial pressure of water vapor
+    const rh = (pv / pws) * 100;
+
+    // Dew Point Temperature (approximation)
+    const a = 17.27;
+    const b = 237.7;
+    const alpha = Math.log(pv / 0.61078);
+    const dewPoint = (b * alpha) / (a - alpha);
+
+    // Wet Bulb (approximation, not perfect)
+    const tw = dryBulb * Math.atan(0.151977 * Math.sqrt(rh + 8.313659)) +
+                Math.atan(dryBulb + rh) - Math.atan(rh - 1.676331) +
+                0.00391838 * Math.pow(rh, 1.5) * Math.atan(0.023101 * rh) - 4.686035;
+
+    // Specific Volume
+    const R_da = 0.287042; // kJ/kg·K
+    const T_k = dryBulb + 273.15;
+    const v = R_da * T_k * (1 + 1.6078 * humidityRatio) / p_atm; // in m³/kg
+
+    // Update UI
+    marker.style.left = `${x}px`;
+    marker.style.top = `${y}px`;
+    marker.style.display = 'block';
+
+    elements.dryBulb.textContent = dryBulb.toFixed(1);
+    elements.humidityRatio.textContent = humidityRatio.toFixed(4);
+    elements.enthalpy.textContent = h.toFixed(1);
+    elements.rh.textContent = rh.toFixed(1);
+    elements.dewPoint.textContent = dewPoint.toFixed(1);
+    elements.wetBulb.textContent = tw.toFixed(1);
+    elements.vp.textContent = pv.toFixed(3);
+    elements.vSpec.textContent = v.toFixed(3);
+  });
+</script>
+
 </body>
 </html>
