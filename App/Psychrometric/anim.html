@@ -75,7 +75,7 @@
           <button type="submit">Tampilkan Titik</button>
         </form>
       </div>
-  
+
       <!-- Output -->
       <div id="output">
         <h3>Hasil:</h3>
@@ -90,10 +90,10 @@
       </div>
 
     </div>
-    
+
     <!-- Chart -->
     <div id="chart">
-      <img id="chartImage" src="image2.png" alt="Psychrometric Chart" draggable="false">
+      <img id="chartImage" src="Chart2.png" alt="Psychrometric Chart" draggable="false">
       <div id="marker"></div>
     </div>
 
@@ -180,41 +180,38 @@
 
     let isTracking = false; // default: tidak aktif
 
-// Aktifkan tracking saat klik kiri di gambar
-chart.addEventListener('mousedown', function (e) {
-  if (e.button === 0) { // Klik kiri
-    isTracking = true;
-  }
-});
+    // Aktifkan tracking saat klik kiri di gambar
+    chart.addEventListener('mousedown', function (e) {
+      if (e.button === 0) { // Klik kiri
+        isTracking = true;
+      }
+    });
 
-// Nonaktifkan tracking saat klik kanan di gambar
-chart.addEventListener('contextmenu', function (e) {
-  e.preventDefault(); // cegah menu konteks muncul
-  isTracking = false;
-});
+    // Nonaktifkan tracking saat klik kanan di gambar
+    chart.addEventListener('contextmenu', function (e) {
+      e.preventDefault(); // cegah menu konteks muncul
+      isTracking = false;
+    });
 
-// Update marker dan nilai hanya jika tracking aktif
-chart.addEventListener('mousemove', function (e) {
-  if (!isTracking) return;
+    // Update marker dan nilai hanya jika tracking aktif
+    chart.addEventListener('mousemove', function (e) {
+      if (!isTracking) return;
 
-  const rect = chart.getBoundingClientRect();
-  const x = e.clientX - rect.left;
-  const y = e.clientY - rect.top;
+      const rect = chart.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
 
-  const width = chart.width;
-  const height = chart.height;
+      const width = chart.width;
+      const height = chart.height;
 
-  if (x < 0 || y < 0 || x > width || y > height) return;
+      if (x < 0 || y < 0 || x > width || y > height) return;
 
-  const dryBulb = -10 + (x / width) * 60;
-  const humidityRatio = (1 - (y / height)) * 0.030;
+      const dryBulb = -10 + (x / width) * 60;
+      const humidityRatio = (1 - (y / height)) * 0.030;
 
-  updateFromValues(dryBulb, humidityRatio);
-});
+      updateFromValues(dryBulb, humidityRatio);
+    });
 
-
-
-    
   </script>
 
 </body>
