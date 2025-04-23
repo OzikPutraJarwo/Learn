@@ -1,0 +1,106 @@
+.none,.quickedit,.blogger-clickTrap.singleton-element,.fi{display:none}
+html{font-size:15px}
+html,body{-webkit-text-size-adjust:none;-moz-text-size-adjust:none;-ms-text-size-adjust:none;height:100%;scroll-behavior:smooth}
+*,:after,:before{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}
+body{line-height:1.4;margin:0;padding:0;-webkit-font-smoothing:antialiased;word-wrap:break-word;-ms-word-wrap:break-word;letter-spacing:.2px}
+*{margin:0;padding:0}
+.section,.widget{margin:0}
+table{border-collapse:collapse;border-spacing:0}
+textarea{transition:none;max-width:100%}
+input,button,select,textarea{line-height:normal;vertical-align:baseline}
+a,h1,h2,h3,h4,h5,h6{text-decoration:none;}
+a:hover{text-decoration:none;}
+pre,code{font-size:.8rem;max-width:100%;overflow-x:auto;padding:.75rem;font-family:monospace}
+code{padding:.5rem 1rem}
+.clear{clear:both}
+sup,sub{font-size:.7rem}
+article a[href*="blogger.googleusercontent"],article a[href*="bp.blogspot.com"]{margin:0!important}
+img{max-width:100%}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #353353;
+    margin: 0;
+}
+
+img {
+    width: 100%;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: #5a5786;
+    border-radius: 2rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    box-shadow: 0 5px 20px 0 rgb(0 0 0 / 20%);
+}
+
+main #set {
+    color: white;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem
+}
+
+#output h3 {
+    font-size: 1.5rem;
+}
+
+#output #parameter {
+    display: flex;
+    flex-direction: column;
+    gap: .75rem;
+    margin-top: 1rem
+}
+
+#output #parameter .item {
+    display: grid;
+    grid-template-columns: 1.75rem 200px 50px 1fr;
+    justify-content: center;
+    align-items: center;
+    line-height: 0;
+    gap: 1rem;
+}
+
+#chart {
+    position: relative;
+    cursor: crosshair;
+    line-height: 0;
+    font-size: 0;
+    aspect-ratio: 650 / 480;
+    background-color: white;
+    border-radius: 2rem;
+}
+
+#marker {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: red;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    display: none;
+    z-index: 2;
+}
+
+#chartAxes {
+    position: relative;
+}
+
+#chartImage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 92%;
+    height: 88%;
+    pointer-events: none;
+    z-index: 1;
+}
