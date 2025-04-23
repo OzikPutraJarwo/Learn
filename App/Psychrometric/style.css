@@ -28,15 +28,42 @@ img {
 }
 
 main {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    background-color: #5a5786;
-    border-radius: 2rem;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 90%;
+    display: grid;
+    gap: 2rem;
+    color: white;
+    max-height: 100%;
+}
+
+main header {
+    text-align: center;
+    display: grid;
+    grid-template-columns: 40px 1fr 40px;
+    padding-top: 2rem;
+}
+
+main header .icon {
+    display: grid;
+    align-items: center;
+    box-shadow: 0 5px 20px 0 rgb(0 0 0 / 50%);
+    border-radius: 100%;
+    transition: .2s all;
+    cursor: pointer;
+}
+
+main header .icon:hover {
+    opacity: .5;
+}
+
+main #content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: #5a5786;
+    border-radius: 2rem;
     box-shadow: 0 5px 20px 0 rgb(0 0 0 / 20%);
 }
 
@@ -45,7 +72,57 @@ main #set {
     padding: 2rem;
     display: flex;
     flex-direction: column;
-    gap: 2rem
+    gap: 2rem;
+    min-width: 450px;
+    overflow: auto;
+}
+
+#manualInput {
+    display: grid;
+    gap: 1rem;
+}
+
+#manualInput h3 {
+    font-size: 1.5rem;
+}
+
+#manualInput form {
+    display: grid;
+    grid-template-columns: 1fr 65px;
+    gap: 1rem;
+}
+
+#manualInput form > div {
+    display: grid;
+    gap: 1rem;
+}
+
+#manualInput form > div > div {
+    display: grid;
+    gap: .5rem;
+}
+
+#manualInput form input {
+    border: unset;
+    outline: none;
+    font-size: 0.8rem;
+    padding: 0.5rem 0.6rem;
+    border-radius: .5rem;
+}
+
+#manualInput form button {
+    background: #3bb975;
+    border: none;
+    outline: none;
+    color: white;
+    font-weight: bold;
+    border-radius: .5rem;
+    cursor: pointer;
+    transition: .2s all;
+}
+
+#manualInput form button:hover {
+    background: #279057;
 }
 
 #output h3 {
@@ -103,4 +180,10 @@ main #set {
     height: 88%;
     pointer-events: none;
     z-index: 1;
+}
+
+main footer {
+    text-align: center;
+    font-size: .9rem;
+    padding-bottom: 2rem;
 }

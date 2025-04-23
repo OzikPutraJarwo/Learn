@@ -107,3 +107,17 @@ chartContainer.addEventListener('mousemove', function (e) {
 
   updateFromValues(dryBulb, humidityRatio);
 });
+
+document.getElementById('download').addEventListener('click', function () {
+  const chartContainer = document.getElementById('chart'); // pastikan ini wrapper chart + marker
+
+  html2canvas(chartContainer, {
+    scale: 3, 
+    useCORS: true
+  }).then(canvas => {
+    const link = document.createElement('a');
+    link.download = 'psychrometric.png';
+    link.href = canvas.toDataURL('image/png');
+    link.click();
+  });
+});
