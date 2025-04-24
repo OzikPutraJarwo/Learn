@@ -23,6 +23,10 @@ body {
     margin: 0;
 }
 
+.hide {
+    display: none;
+}
+
 img {
     width: 100%;
 }
@@ -75,6 +79,16 @@ main #set {
     gap: 2rem;
     min-width: 450px;
     overflow: auto;
+}
+
+main #set #input {
+    display: grid;
+    gap: 2rem;
+}
+
+main #set #input #modeToggle {
+    display: flex;
+    gap: 2rem
 }
 
 #manualInput {
@@ -147,7 +161,7 @@ main #set {
 
 #chart {
     position: relative;
-    cursor: crosshair;
+    /* cursor: crosshair; */
     line-height: 0;
     font-size: 0;
     aspect-ratio: 650 / 480;
@@ -186,4 +200,49 @@ main footer {
     text-align: center;
     font-size: .9rem;
     padding-bottom: 2rem;
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: 3;
+}
+
+#pop {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    z-index: 4;
+    background-color: rgb(255, 255, 255);
+    max-width: 500px;
+    width: 100%;
+    margin: 2rem;
+    border-radius: 1rem;
+    padding: 2rem;
+}
+
+#pop .title {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+#pop .content p:not(:last-child) {
+    margin-bottom: 1rem;
+}
+
+#pop #popclose {
+    position: absolute;
+    top: 2.3rem;
+    right: 2.3rem;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
 }
