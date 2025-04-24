@@ -11,6 +11,8 @@
 
 <body>
 
+  <div id="overlay" class="hide"></div>
+
   <main>
 
     <header>
@@ -28,6 +30,10 @@
       <div id="set">
 
         <div id="input">
+          <div id="modeToggle">
+            <label><input type="radio" name="markerMode" value="single" checked> Single Marker</label>
+            <label><input type="radio" name="markerMode" value="multi"> Multi Marker</label>
+          </div>
           <div id="manualInput">
             <h3>Manual Input</h3>
             <form id="manualForm">
@@ -105,7 +111,7 @@
       </div>
 
       <div id="chart">
-        <img id="chartImage" src="Chart.png" alt="Psychrometric Chart" draggable="false">
+        <img id="chartImage" src="Chart3.png" alt="Psychrometric Chart" draggable="false">
         <img id="chartAxes" src="Axes.png" alt="Psychrometric Chart Axes" draggable="false">
         <div id="marker"></div>
       </div>
@@ -115,8 +121,22 @@
     <footer>
       <p>Created with pure 🤍 by Ozik</p>
     </footer>
-
+    
   </main>
+
+
+  <div id="pop" class="hide">
+    <div class="wrap">
+      <p class="title">Information</p>
+      <div class="content">
+        <p><b>Left click</b> on the chart to locate interactive marker.</p>
+        <p><b>Right click</b> on the chart to set the marker.</p>
+      </div>
+      <div id="popclose">
+        <img src="./icon/close.png" alt="Close">
+      </div>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 
