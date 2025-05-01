@@ -1,15 +1,11 @@
-# Instalasi Library
-
-# install.packages("httpgd")
-
-# Pemanggilan Library
+# library
 
 library(readxl)
 library(olsrr)
 library(lavaan)
 library(semPlot)
-         
-# Setting excel data
+
+# set data excel
 
 Excel_Data_Total <- read_excel(
   "R/archive/Kedelai Kering/Contoh Data Total.xlsx", 
@@ -26,25 +22,25 @@ Excel_Data_Total <- read_excel(
   )
 )
 
-# Input data
+# input
 
 model <- lm(
   BPT ~ 
   TT + JD + DB + JCA + JCT + JCB + JCL + CP + JR + JAR + PP + LP + TP + PB + LB + TB + JPT + JBP + JBT, 
   data = Excel_Data_Total
-  ) 
+) 
 
-# Mengecek VIF
+# cek VIF
 
-ols_vif_tol(model)
+print(ols_vif_tol(model))
 
-# Data grafik
+# grafik
 
 modelHasilVIF <- "BBL ~ TT + JD + DB + CP + JR + JAR + LP + TP + JPT + JBP + JBT"
 modelOrtogonal <- sem(modelHasilVIF, data = Excel_Data_Total, orthogonal=TRUE)
 print(modelOrtogonal)
 
-# Format & print grafik
+# format grafik
 
 semPaths(
     modelOrtogonal,
