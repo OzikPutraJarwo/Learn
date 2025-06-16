@@ -1,7 +1,7 @@
   library(factoextra)
   library(ggplot2)
 
-  data = read.csv("R/archive/Hamdani/data3.csv")
+  data = read.csv("R/archive/Hamdani/data4.csv")
 
   data.pca <- prcomp(data[, -6], 
                     scale = TRUE)
